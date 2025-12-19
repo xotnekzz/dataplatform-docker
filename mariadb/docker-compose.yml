@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:10.6
+    container_name: mariadb-source
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=1234
+      - MYSQL_DATABASE=demo_db
+    volumes:
+      - ./mariadb/conf.d:/etc/mysql/conf.d
+      - ./mariadb/init:/docker-entrypoint-initdb.d
+    networks:
+      - default
+    # --- MariaDB 메모리 제한 설정 ---
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+
+# ==========================================
+# Network Configuration
+# ==========================================
+networks:
+  default:
+    name: dataplatform-net
+    external: true
