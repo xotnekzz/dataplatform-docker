@@ -1,0 +1,1481 @@
+using java version 17
+-Dlog4j2.formatMsgNoLookups=true -Xmx8192m -XX:+UseG1GC -Xlog:gc*:/opt/starrocks/fe/log/fe.gc.log.20251218-234802:time -XX:ErrorFile=/opt/starrocks/fe/log/hs_err_pid%p.log -Djava.security.policy=/opt/starrocks/fe/conf/udf_security.policy
+start time: Thu Dec 18 23:48:02 KST 2025, server uptime:  23:48:02 up  1:38,  0 users,  load average: 0.27, 0.55, 1.73
+=====
+<?xml version="1.0" encoding="utf-8"?>
+
+<Configuration status="info" packages="com.starrocks.common">
+  <Appenders>
+    <Console name="ConsoleErr" target="SYSTEM_ERR" follow="true">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+    </Console>
+    <RollingFile name="Sys" fileName="/opt/starrocks/fe/log/fe.log" filePattern="/opt/starrocks/fe/log/fe.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="SysWF" fileName="/opt/starrocks/fe/log/fe.warn.log" filePattern="/opt/starrocks/fe/log/fe.warn.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n %ex"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.warn.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="Auditfile" fileName="/opt/starrocks/fe/log/fe.audit.log" filePattern="/opt/starrocks/fe/log/fe.audit.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="90" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.audit.log.*" />
+          <IfLastModified age="30d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="dumpFile" fileName="/opt/starrocks/fe/log/fe.dump.log" filePattern="/opt/starrocks/fe/log/fe.dump.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.dump.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="BigQueryFile" fileName="/opt/starrocks/fe/log/fe.big_query.log" filePattern="/opt/starrocks/fe/log/fe.big_query.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.big_query.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="ProfileFile" fileName="/opt/starrocks/fe/log/fe.profile.log" filePattern="/opt/starrocks/fe/log/fe.profile.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.profile.log.*" />
+          <IfLastModified age="1d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="FeaturesFile" fileName="/opt/starrocks/fe/log/fe.features.log"        filePattern="/opt/starrocks/fe/log/fe.features.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.features.log.*" />
+          <IfLastModified age="3d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="InternalFile" fileName="/opt/starrocks/fe/log/fe.internal.log" filePattern="/opt/starrocks/fe/log/fe.internal.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="90" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.internal.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="Sys"/>
+      <AppenderRef ref="SysWF" level="WARN"/>
+    </Root>
+    <Logger name="audit" level="ERROR" additivity="false">
+      <AppenderRef ref="Auditfile"/>
+    </Logger>
+    <Logger name="dump" level="ERROR" additivity="false">
+      <AppenderRef ref="dumpFile"/>
+    </Logger>
+    <Logger name="big_query" level="ERROR" additivity="false">
+      <AppenderRef ref="BigQueryFile"/>
+    </Logger>
+    <Logger name="profile" level="INFO" additivity="false">
+      <AppenderRef ref="ProfileFile"/>
+    </Logger>
+    <Logger name="features" level="INFO" additivity="false">
+      <AppenderRef ref="FeaturesFile"/>
+    </Logger>
+    <Logger name='internal.base' level="INFO" additivity="false"> 
+      <AppenderRef ref="InternalFile"/>
+    </Logger>
+    <Logger name='internal.statistic' level="INFO" additivity="false"> 
+      <AppenderRef ref="InternalFile"/>
+    </Logger>
+    <Logger name='audit.slow_query' level='INFO'/>
+    <Logger name='audit.query' level='INFO'/>
+    <Logger name='dump.query' level='INFO'/>
+    <Logger name='big_query.query' level='INFO'/>
+    <Logger name='org.apache.kafka' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+    <Logger name='org.apache.hudi' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+    <Logger name='org.apache.hadoop.io.compress' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+  </Loggers>
+</Configuration>
+=====
+[2025-12-18 23:48:08] notify new FE type transfer: UNKNOWN
+[2025-12-18 23:48:08] notify new FE type transfer: LEADER
+[2025-12-18 23:48:09] leader finished to replay journal, can write now.
+# WARNING: Unable to get Instrumentation. Dynamic Attach failed. You may add this JAR as -javaagent manually, or supply -Djdk.attach.allowAttachSelf
+# WARNING: Unable to attach Serviceability Agent. sun.jvm.hotspot.memory.Universe.getNarrowOopBase()
+using java version 17
+-Dlog4j2.formatMsgNoLookups=true -Xmx8192m -XX:+UseG1GC -Xlog:gc*:/opt/starrocks/fe/log/fe.gc.log.20251218-234931:time -XX:ErrorFile=/opt/starrocks/fe/log/hs_err_pid%p.log -Djava.security.policy=/opt/starrocks/fe/conf/udf_security.policy
+start time: Thu Dec 18 23:49:31 KST 2025, server uptime:  23:49:31 up 0 min,  0 users,  load average: 0.08, 0.02, 0.01
+=====
+<?xml version="1.0" encoding="utf-8"?>
+
+<Configuration status="info" packages="com.starrocks.common">
+  <Appenders>
+    <Console name="ConsoleErr" target="SYSTEM_ERR" follow="true">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+    </Console>
+    <RollingFile name="Sys" fileName="/opt/starrocks/fe/log/fe.log" filePattern="/opt/starrocks/fe/log/fe.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="SysWF" fileName="/opt/starrocks/fe/log/fe.warn.log" filePattern="/opt/starrocks/fe/log/fe.warn.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n %ex"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.warn.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="Auditfile" fileName="/opt/starrocks/fe/log/fe.audit.log" filePattern="/opt/starrocks/fe/log/fe.audit.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="90" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.audit.log.*" />
+          <IfLastModified age="30d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="dumpFile" fileName="/opt/starrocks/fe/log/fe.dump.log" filePattern="/opt/starrocks/fe/log/fe.dump.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.dump.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="BigQueryFile" fileName="/opt/starrocks/fe/log/fe.big_query.log" filePattern="/opt/starrocks/fe/log/fe.big_query.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.big_query.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="ProfileFile" fileName="/opt/starrocks/fe/log/fe.profile.log" filePattern="/opt/starrocks/fe/log/fe.profile.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.profile.log.*" />
+          <IfLastModified age="1d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="FeaturesFile" fileName="/opt/starrocks/fe/log/fe.features.log"        filePattern="/opt/starrocks/fe/log/fe.features.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.features.log.*" />
+          <IfLastModified age="3d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="InternalFile" fileName="/opt/starrocks/fe/log/fe.internal.log" filePattern="/opt/starrocks/fe/log/fe.internal.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="90" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.internal.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="Sys"/>
+      <AppenderRef ref="SysWF" level="WARN"/>
+    </Root>
+    <Logger name="audit" level="ERROR" additivity="false">
+      <AppenderRef ref="Auditfile"/>
+    </Logger>
+    <Logger name="dump" level="ERROR" additivity="false">
+      <AppenderRef ref="dumpFile"/>
+    </Logger>
+    <Logger name="big_query" level="ERROR" additivity="false">
+      <AppenderRef ref="BigQueryFile"/>
+    </Logger>
+    <Logger name="profile" level="INFO" additivity="false">
+      <AppenderRef ref="ProfileFile"/>
+    </Logger>
+    <Logger name="features" level="INFO" additivity="false">
+      <AppenderRef ref="FeaturesFile"/>
+    </Logger>
+    <Logger name='internal.base' level="INFO" additivity="false"> 
+      <AppenderRef ref="InternalFile"/>
+    </Logger>
+    <Logger name='internal.statistic' level="INFO" additivity="false"> 
+      <AppenderRef ref="InternalFile"/>
+    </Logger>
+    <Logger name='audit.slow_query' level='INFO'/>
+    <Logger name='audit.query' level='INFO'/>
+    <Logger name='dump.query' level='INFO'/>
+    <Logger name='big_query.query' level='INFO'/>
+    <Logger name='org.apache.kafka' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+    <Logger name='org.apache.hudi' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+    <Logger name='org.apache.hadoop.io.compress' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+  </Loggers>
+</Configuration>
+=====
+[2025-12-18 23:49:33] notify new FE type transfer: UNKNOWN
+[2025-12-18 23:49:33] notify new FE type transfer: FOLLOWER
+# WARNING: Unable to get Instrumentation. Dynamic Attach failed. You may add this JAR as -javaagent manually, or supply -Djdk.attach.allowAttachSelf
+# WARNING: Unable to attach Serviceability Agent. sun.jvm.hotspot.memory.Universe.getNarrowOopBase()
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-0
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-1
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:119)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:190)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.execWithQueryDeployExecutor(Coordinator.java:108)
+	at com.starrocks.qe.StmtExecutor.handleQueryStmt(StmtExecutor.java:1435)
+	at com.starrocks.qe.StmtExecutor.execute(StmtExecutor.java:745)
+	at com.starrocks.qe.ConnectProcessor.executeQueryAttempt(ConnectProcessor.java:514)
+	at com.starrocks.qe.ConnectProcessor.runWithParserStageRetry(ConnectProcessor.java:412)
+	at com.starrocks.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:357)
+	at com.starrocks.qe.ConnectProcessor.dispatch(ConnectProcessor.java:717)
+	at com.starrocks.qe.ConnectProcessor.processOnce(ConnectProcessor.java:1065)
+	at com.starrocks.mysql.nio.MySQLReadListener.handleRequest(MySQLReadListener.java:99)
+	at com.starrocks.mysql.nio.MySQLReadListener.lambda$handleEvent$0(MySQLReadListener.java:85)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:119)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:190)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.execWithQueryDeployExecutor(Coordinator.java:108)
+	at com.starrocks.qe.StmtExecutor.handleQueryStmt(StmtExecutor.java:1435)
+	at com.starrocks.qe.StmtExecutor.execute(StmtExecutor.java:745)
+	at com.starrocks.qe.ConnectProcessor.executeQueryAttempt(ConnectProcessor.java:514)
+	at com.starrocks.qe.ConnectProcessor.runWithParserStageRetry(ConnectProcessor.java:412)
+	at com.starrocks.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:357)
+	at com.starrocks.qe.ConnectProcessor.dispatch(ConnectProcessor.java:717)
+	at com.starrocks.qe.ConnectProcessor.processOnce(ConnectProcessor.java:1065)
+	at com.starrocks.mysql.nio.MySQLReadListener.handleRequest(MySQLReadListener.java:99)
+	at com.starrocks.mysql.nio.MySQLReadListener.lambda$handleEvent$0(MySQLReadListener.java:85)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:119)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:190)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.execWithQueryDeployExecutor(Coordinator.java:108)
+	at com.starrocks.qe.StmtExecutor.handleQueryStmt(StmtExecutor.java:1435)
+	at com.starrocks.qe.StmtExecutor.execute(StmtExecutor.java:745)
+	at com.starrocks.qe.ConnectProcessor.executeQueryAttempt(ConnectProcessor.java:514)
+	at com.starrocks.qe.ConnectProcessor.runWithParserStageRetry(ConnectProcessor.java:412)
+	at com.starrocks.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:357)
+	at com.starrocks.qe.ConnectProcessor.dispatch(ConnectProcessor.java:717)
+	at com.starrocks.qe.ConnectProcessor.processOnce(ConnectProcessor.java:1065)
+	at com.starrocks.mysql.nio.MySQLReadListener.handleRequest(MySQLReadListener.java:99)
+	at com.starrocks.mysql.nio.MySQLReadListener.lambda$handleEvent$0(MySQLReadListener.java:85)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0x62b3b724] failed
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0x838faa8f] failed
+Dec 18, 2025 11:49:37 PM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0x950c56d6] failed
+Dec 18, 2025 11:50:34 PM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+using java version 17
+-Dlog4j2.formatMsgNoLookups=true -Xmx8192m -XX:+UseG1GC -Xlog:gc*:/opt/starrocks/fe/log/fe.gc.log.20251219-001735:time -XX:ErrorFile=/opt/starrocks/fe/log/hs_err_pid%p.log -Djava.security.policy=/opt/starrocks/fe/conf/udf_security.policy
+start time: Fri Dec 19 00:17:35 KST 2025, server uptime:  00:17:35 up 0 min,  0 users,  load average: 1.69, 0.40, 0.13
+=====
+<?xml version="1.0" encoding="utf-8"?>
+
+<Configuration status="info" packages="com.starrocks.common">
+  <Appenders>
+    <Console name="ConsoleErr" target="SYSTEM_ERR" follow="true">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+    </Console>
+    <RollingFile name="Sys" fileName="/opt/starrocks/fe/log/fe.log" filePattern="/opt/starrocks/fe/log/fe.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="SysWF" fileName="/opt/starrocks/fe/log/fe.warn.log" filePattern="/opt/starrocks/fe/log/fe.warn.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n %ex"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.warn.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="Auditfile" fileName="/opt/starrocks/fe/log/fe.audit.log" filePattern="/opt/starrocks/fe/log/fe.audit.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="90" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.audit.log.*" />
+          <IfLastModified age="30d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="dumpFile" fileName="/opt/starrocks/fe/log/fe.dump.log" filePattern="/opt/starrocks/fe/log/fe.dump.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.dump.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="BigQueryFile" fileName="/opt/starrocks/fe/log/fe.big_query.log" filePattern="/opt/starrocks/fe/log/fe.big_query.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.big_query.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="ProfileFile" fileName="/opt/starrocks/fe/log/fe.profile.log" filePattern="/opt/starrocks/fe/log/fe.profile.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.profile.log.*" />
+          <IfLastModified age="1d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="FeaturesFile" fileName="/opt/starrocks/fe/log/fe.features.log"        filePattern="/opt/starrocks/fe/log/fe.features.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.features.log.*" />
+          <IfLastModified age="3d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="InternalFile" fileName="/opt/starrocks/fe/log/fe.internal.log" filePattern="/opt/starrocks/fe/log/fe.internal.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="90" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.internal.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="Sys"/>
+      <AppenderRef ref="SysWF" level="WARN"/>
+    </Root>
+    <Logger name="audit" level="ERROR" additivity="false">
+      <AppenderRef ref="Auditfile"/>
+    </Logger>
+    <Logger name="dump" level="ERROR" additivity="false">
+      <AppenderRef ref="dumpFile"/>
+    </Logger>
+    <Logger name="big_query" level="ERROR" additivity="false">
+      <AppenderRef ref="BigQueryFile"/>
+    </Logger>
+    <Logger name="profile" level="INFO" additivity="false">
+      <AppenderRef ref="ProfileFile"/>
+    </Logger>
+    <Logger name="features" level="INFO" additivity="false">
+      <AppenderRef ref="FeaturesFile"/>
+    </Logger>
+    <Logger name='internal.base' level="INFO" additivity="false"> 
+      <AppenderRef ref="InternalFile"/>
+    </Logger>
+    <Logger name='internal.statistic' level="INFO" additivity="false"> 
+      <AppenderRef ref="InternalFile"/>
+    </Logger>
+    <Logger name='audit.slow_query' level='INFO'/>
+    <Logger name='audit.query' level='INFO'/>
+    <Logger name='dump.query' level='INFO'/>
+    <Logger name='big_query.query' level='INFO'/>
+    <Logger name='org.apache.kafka' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+    <Logger name='org.apache.hudi' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+    <Logger name='org.apache.hadoop.io.compress' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+  </Loggers>
+</Configuration>
+=====
+[2025-12-19 00:17:37] notify new FE type transfer: UNKNOWN
+[2025-12-19 00:17:37] notify new FE type transfer: FOLLOWER
+# WARNING: Unable to get Instrumentation. Dynamic Attach failed. You may add this JAR as -javaagent manually, or supply -Djdk.attach.allowAttachSelf
+Dec 19, 2025 12:17:40 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 19, 2025 12:17:40 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:17:40 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:128)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:193)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.exec(Coordinator.java:96)
+	at com.starrocks.qe.StmtExecutor.executeStmtWithExecPlan(StmtExecutor.java:3016)
+	at com.starrocks.qe.SimpleExecutor.executeDQL(SimpleExecutor.java:107)
+	at com.starrocks.qe.SimpleExecutor.executeDQL(SimpleExecutor.java:89)
+	at com.starrocks.statistic.columns.PredicateColumnsStorage.restore(PredicateColumnsStorage.java:254)
+	at com.starrocks.statistic.columns.PredicateColumnsMgr.restore(PredicateColumnsMgr.java:193)
+	at com.starrocks.statistic.columns.PredicateColumnsMgr$DaemonThread.runAfterCatalogReady(PredicateColumnsMgr.java:237)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+
+Dec 19, 2025 12:17:40 AM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0x84504bf4] failed
+# WARNING: Unable to attach Serviceability Agent. sun.jvm.hotspot.memory.Universe.getNarrowOopBase()
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-1
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:119)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:190)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.execWithQueryDeployExecutor(Coordinator.java:108)
+	at com.starrocks.qe.StmtExecutor.handleQueryStmt(StmtExecutor.java:1435)
+	at com.starrocks.qe.StmtExecutor.execute(StmtExecutor.java:745)
+	at com.starrocks.qe.ConnectProcessor.executeQueryAttempt(ConnectProcessor.java:514)
+	at com.starrocks.qe.ConnectProcessor.runWithParserStageRetry(ConnectProcessor.java:412)
+	at com.starrocks.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:357)
+	at com.starrocks.qe.ConnectProcessor.dispatch(ConnectProcessor.java:717)
+	at com.starrocks.qe.ConnectProcessor.processOnce(ConnectProcessor.java:1065)
+	at com.starrocks.mysql.nio.MySQLReadListener.handleRequest(MySQLReadListener.java:99)
+	at com.starrocks.mysql.nio.MySQLReadListener.lambda$handleEvent$0(MySQLReadListener.java:85)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-1
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-0
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0xc9851d99] failed
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0xcae80273] failed
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:119)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:190)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.execWithQueryDeployExecutor(Coordinator.java:108)
+	at com.starrocks.qe.StmtExecutor.handleQueryStmt(StmtExecutor.java:1435)
+	at com.starrocks.qe.StmtExecutor.execute(StmtExecutor.java:745)
+	at com.starrocks.qe.ConnectProcessor.executeQueryAttempt(ConnectProcessor.java:514)
+	at com.starrocks.qe.ConnectProcessor.runWithParserStageRetry(ConnectProcessor.java:412)
+	at com.starrocks.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:357)
+	at com.starrocks.qe.ConnectProcessor.dispatch(ConnectProcessor.java:717)
+	at com.starrocks.qe.ConnectProcessor.processOnce(ConnectProcessor.java:1065)
+	at com.starrocks.mysql.nio.MySQLReadListener.handleRequest(MySQLReadListener.java:99)
+	at com.starrocks.mysql.nio.MySQLReadListener.lambda$handleEvent$0(MySQLReadListener.java:85)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0x0a11fc4e] failed
+Dec 19, 2025 12:17:45 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:119)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:190)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.execWithQueryDeployExecutor(Coordinator.java:108)
+	at com.starrocks.qe.StmtExecutor.handleQueryStmt(StmtExecutor.java:1435)
+	at com.starrocks.qe.StmtExecutor.execute(StmtExecutor.java:745)
+	at com.starrocks.qe.ConnectProcessor.executeQueryAttempt(ConnectProcessor.java:514)
+	at com.starrocks.qe.ConnectProcessor.runWithParserStageRetry(ConnectProcessor.java:412)
+	at com.starrocks.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:357)
+	at com.starrocks.qe.ConnectProcessor.dispatch(ConnectProcessor.java:717)
+	at com.starrocks.qe.ConnectProcessor.processOnce(ConnectProcessor.java:1065)
+	at com.starrocks.mysql.nio.MySQLReadListener.handleRequest(MySQLReadListener.java:99)
+	at com.starrocks.mysql.nio.MySQLReadListener.lambda$handleEvent$0(MySQLReadListener.java:85)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:18:40 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+using java version 17
+-Dlog4j2.formatMsgNoLookups=true -Xmx8192m -XX:+UseG1GC -Xlog:gc*:/opt/starrocks/fe/log/fe.gc.log.20251219-002051:time -XX:ErrorFile=/opt/starrocks/fe/log/hs_err_pid%p.log -Djava.security.policy=/opt/starrocks/fe/conf/udf_security.policy
+start time: Fri Dec 19 00:20:51 KST 2025, server uptime:  00:20:51 up 1 min,  0 users,  load average: 2.92, 0.94, 0.33
+=====
+<?xml version="1.0" encoding="utf-8"?>
+
+<Configuration status="info" packages="com.starrocks.common">
+  <Appenders>
+    <Console name="ConsoleErr" target="SYSTEM_ERR" follow="true">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+    </Console>
+    <RollingFile name="Sys" fileName="/opt/starrocks/fe/log/fe.log" filePattern="/opt/starrocks/fe/log/fe.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="SysWF" fileName="/opt/starrocks/fe/log/fe.warn.log" filePattern="/opt/starrocks/fe/log/fe.warn.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n %ex"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.warn.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="Auditfile" fileName="/opt/starrocks/fe/log/fe.audit.log" filePattern="/opt/starrocks/fe/log/fe.audit.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="90" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.audit.log.*" />
+          <IfLastModified age="30d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="dumpFile" fileName="/opt/starrocks/fe/log/fe.dump.log" filePattern="/opt/starrocks/fe/log/fe.dump.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.dump.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="BigQueryFile" fileName="/opt/starrocks/fe/log/fe.big_query.log" filePattern="/opt/starrocks/fe/log/fe.big_query.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.big_query.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="ProfileFile" fileName="/opt/starrocks/fe/log/fe.profile.log" filePattern="/opt/starrocks/fe/log/fe.profile.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.profile.log.*" />
+          <IfLastModified age="1d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="FeaturesFile" fileName="/opt/starrocks/fe/log/fe.features.log"        filePattern="/opt/starrocks/fe/log/fe.features.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.features.log.*" />
+          <IfLastModified age="3d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+    <RollingFile name="InternalFile" fileName="/opt/starrocks/fe/log/fe.internal.log" filePattern="/opt/starrocks/fe/log/fe.internal.log.%d{yyyyMMdd}-%i">
+      <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXXX} %p (%t|%tid) [%C{1}.%M():%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="1024MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="90" fileIndex="min">
+        <Delete basePath="/opt/starrocks/fe/log/" maxDepth="1" followLinks="true">
+          <IfFileName glob="fe.internal.log.*" />
+          <IfLastModified age="7d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="Sys"/>
+      <AppenderRef ref="SysWF" level="WARN"/>
+    </Root>
+    <Logger name="audit" level="ERROR" additivity="false">
+      <AppenderRef ref="Auditfile"/>
+    </Logger>
+    <Logger name="dump" level="ERROR" additivity="false">
+      <AppenderRef ref="dumpFile"/>
+    </Logger>
+    <Logger name="big_query" level="ERROR" additivity="false">
+      <AppenderRef ref="BigQueryFile"/>
+    </Logger>
+    <Logger name="profile" level="INFO" additivity="false">
+      <AppenderRef ref="ProfileFile"/>
+    </Logger>
+    <Logger name="features" level="INFO" additivity="false">
+      <AppenderRef ref="FeaturesFile"/>
+    </Logger>
+    <Logger name='internal.base' level="INFO" additivity="false"> 
+      <AppenderRef ref="InternalFile"/>
+    </Logger>
+    <Logger name='internal.statistic' level="INFO" additivity="false"> 
+      <AppenderRef ref="InternalFile"/>
+    </Logger>
+    <Logger name='audit.slow_query' level='INFO'/>
+    <Logger name='audit.query' level='INFO'/>
+    <Logger name='dump.query' level='INFO'/>
+    <Logger name='big_query.query' level='INFO'/>
+    <Logger name='org.apache.kafka' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+    <Logger name='org.apache.hudi' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+    <Logger name='org.apache.hadoop.io.compress' level='WARN'><AppenderRef ref='SysWF'/></Logger>
+  </Loggers>
+</Configuration>
+=====
+[2025-12-19 00:20:53] notify new FE type transfer: UNKNOWN
+[2025-12-19 00:20:53] notify new FE type transfer: FOLLOWER
+# WARNING: Unable to get Instrumentation. Dynamic Attach failed. You may add this JAR as -javaagent manually, or supply -Djdk.attach.allowAttachSelf
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-0
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPoolObjectFactory wrap
+SEVERE: failed to get result from stp
+java.net.UnknownHostException: starrocks-be-1
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:47)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:639)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:119)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:988)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:515)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:428)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:485)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0x4179ecf6] failed
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0x7c3f4fda] failed
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0x530c99b9] failed
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:119)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:190)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.execWithQueryDeployExecutor(Coordinator.java:108)
+	at com.starrocks.qe.StmtExecutor.handleQueryStmt(StmtExecutor.java:1435)
+	at com.starrocks.qe.StmtExecutor.execute(StmtExecutor.java:745)
+	at com.starrocks.qe.ConnectProcessor.executeQueryAttempt(ConnectProcessor.java:514)
+	at com.starrocks.qe.ConnectProcessor.runWithParserStageRetry(ConnectProcessor.java:412)
+	at com.starrocks.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:357)
+	at com.starrocks.qe.ConnectProcessor.dispatch(ConnectProcessor.java:717)
+	at com.starrocks.qe.ConnectProcessor.processOnce(ConnectProcessor.java:1065)
+	at com.starrocks.mysql.nio.MySQLReadListener.handleRequest(MySQLReadListener.java:99)
+	at com.starrocks.mysql.nio.MySQLReadListener.lambda$handleEvent$0(MySQLReadListener.java:85)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:119)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:190)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.execWithQueryDeployExecutor(Coordinator.java:108)
+	at com.starrocks.qe.StmtExecutor.handleQueryStmt(StmtExecutor.java:1435)
+	at com.starrocks.qe.StmtExecutor.execute(StmtExecutor.java:745)
+	at com.starrocks.qe.ConnectProcessor.executeQueryAttempt(ConnectProcessor.java:514)
+	at com.starrocks.qe.ConnectProcessor.runWithParserStageRetry(ConnectProcessor.java:412)
+	at com.starrocks.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:357)
+	at com.starrocks.qe.ConnectProcessor.dispatch(ConnectProcessor.java:717)
+	at com.starrocks.qe.ConnectProcessor.processOnce(ConnectProcessor.java:1065)
+	at com.starrocks.mysql.nio.MySQLReadListener.handleRequest(MySQLReadListener.java:99)
+	at com.starrocks.mysql.nio.MySQLReadListener.lambda$handleEvent$0(MySQLReadListener.java:85)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:119)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:190)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.execWithQueryDeployExecutor(Coordinator.java:108)
+	at com.starrocks.qe.StmtExecutor.handleQueryStmt(StmtExecutor.java:1435)
+	at com.starrocks.qe.StmtExecutor.execute(StmtExecutor.java:745)
+	at com.starrocks.qe.ConnectProcessor.executeQueryAttempt(ConnectProcessor.java:514)
+	at com.starrocks.qe.ConnectProcessor.runWithParserStageRetry(ConnectProcessor.java:412)
+	at com.starrocks.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:357)
+	at com.starrocks.qe.ConnectProcessor.dispatch(ConnectProcessor.java:717)
+	at com.starrocks.qe.ConnectProcessor.processOnce(ConnectProcessor.java:1065)
+	at com.starrocks.mysql.nio.MySQLReadListener.handleRequest(MySQLReadListener.java:99)
+	at com.starrocks.mysql.nio.MySQLReadListener.lambda$handleEvent$0(MySQLReadListener.java:85)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.ChannelPool getChannel
+SEVERE: Unable to validate object
+java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at com.baidu.jprotobuf.pbrpc.transport.ChannelPool.getChannel(ChannelPool.java:80)
+	at com.baidu.jprotobuf.pbrpc.transport.RpcChannel.getConnection(RpcChannel.java:73)
+	at com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy.invoke(ProtobufRpcProxy.java:499)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.execPlanFragmentAsync(Unknown Source)
+	at com.starrocks.rpc.PBackendServiceWithMetrics.execPlanFragmentAsync(PBackendServiceWithMetrics.java:60)
+	at com.starrocks.rpc.BackendServiceClient.sendPlanFragmentAsync(BackendServiceClient.java:90)
+	at com.starrocks.rpc.BackendServiceClient.execPlanFragmentAsync(BackendServiceClient.java:128)
+	at com.starrocks.qe.scheduler.dag.FragmentInstanceExecState.deployAsync(FragmentInstanceExecState.java:193)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.starrocks.qe.scheduler.Deployer.deployFragments(Deployer.java:168)
+	at com.starrocks.qe.scheduler.dag.AllAtOnceExecutionSchedule.schedule(AllAtOnceExecutionSchedule.java:134)
+	at com.starrocks.qe.DefaultCoordinator.deliverExecFragments(DefaultCoordinator.java:665)
+	at com.starrocks.qe.DefaultCoordinator.startScheduling(DefaultCoordinator.java:558)
+	at com.starrocks.qe.scheduler.Coordinator.exec(Coordinator.java:96)
+	at com.starrocks.qe.StmtExecutor.executeStmtWithExecPlan(StmtExecutor.java:3016)
+	at com.starrocks.qe.SimpleExecutor.executeDQL(SimpleExecutor.java:107)
+	at com.starrocks.qe.SimpleExecutor.executeDQL(SimpleExecutor.java:89)
+	at com.starrocks.statistic.columns.PredicateColumnsStorage.restore(PredicateColumnsStorage.java:254)
+	at com.starrocks.statistic.columns.PredicateColumnsMgr.restore(PredicateColumnsMgr.java:193)
+	at com.starrocks.statistic.columns.PredicateColumnsMgr$DaemonThread.runAfterCatalogReady(PredicateColumnsMgr.java:237)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+
+Dec 19, 2025 12:20:56 AM com.baidu.jprotobuf.pbrpc.transport.RpcChannelFutureListener operationComplete
+WARNING: build channel:[id: 0x86da0d1c] failed
+# WARNING: Unable to attach Serviceability Agent. sun.jvm.hotspot.memory.Universe.getNarrowOopBase()
+Dec 19, 2025 12:21:56 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 19, 2025 12:44:40 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService
+Dec 19, 2025 12:44:44 AM com.baidu.jprotobuf.pbrpc.client.ProtobufRpcProxy proxy
+INFO: Use global share channel pool to create protobuf RPC proxy with interface interface com.starrocks.rpc.PBackendService

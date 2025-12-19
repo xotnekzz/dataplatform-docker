@@ -1,0 +1,33 @@
+2025-12-18 23:48:12.109+09:00 WARN (UNKNOWN starrocks-fe-1_9010_1766069290773(-1)|1) [StateChangeExecutor.notifyNewFETypeTransfer():63] notify new FE type transfer: UNKNOWN
+ 2025-12-18 23:48:12.115+09:00 WARN (RepNode starrocks-fe-1_9010_1766069290773(-1)|99) [StateChangeExecutor.notifyNewFETypeTransfer():63] notify new FE type transfer: FOLLOWER
+ 2025-12-18 23:48:13.244+09:00 WARN (PredicateColumnsDaemonThread|117) [PredicateColumnsMgr$DaemonThread.runAfterCatalogReady():232] system table of predicate_columns is still not ready
+ 2025-12-18 23:48:15.243+09:00 WARN (port-connectivity-checker-0|126) [PortConnectivityChecker.isPortConnectable():113] socket connection to starrocks-fe-2:0 failed, reason: Connection refused
+ 2025-12-18 23:48:15.244+09:00 WARN (PortConnectivityChecker|18) [PortConnectivityChecker.runAfterCatalogReady():90] checking for connectivity of starrocks-fe-2:0 failed, not open
+ 2025-12-18 23:49:13.249+09:00 WARN (PredicateColumnsDaemonThread|117) [PredicateColumnsMgr$DaemonThread.runAfterCatalogReady():232] system table of predicate_columns is still not ready
+ 2025-12-18 23:49:33.576+09:00 WARN (UNKNOWN starrocks-fe-1_9010_1766069290773(-1)|1) [StateChangeExecutor.notifyNewFETypeTransfer():63] notify new FE type transfer: UNKNOWN
+ 2025-12-18 23:49:33.726+09:00 WARN (RepNode starrocks-fe-1_9010_1766069290773(-1)|79) [StateChangeExecutor.notifyNewFETypeTransfer():63] notify new FE type transfer: FOLLOWER
+ 2025-12-18 23:49:34.806+09:00 WARN (PredicateColumnsDaemonThread|103) [PredicateColumnsMgr$DaemonThread.runAfterCatalogReady():232] system table of predicate_columns is still not ready
+ 2025-12-18 23:49:34.870+09:00 WARN (tablet stat mgr|33) [TabletStatMgr.updateLocalTabletStat():220] task exec error. backend[10001]
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.catalog.TabletStatMgr.updateLocalTabletStat(TabletStatMgr.java:212)
+	at com.starrocks.catalog.TabletStatMgr.runAfterCatalogReady(TabletStatMgr.java:119)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:34.938+09:00 WARN (tablet stat mgr|33) [TabletStatMgr.updateLocalTabletStat():220] task exec error. backend[10002]
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-0
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.catalog.TabletStatMgr.updateLocalTabletStat(TabletStatMgr.java:212)
+	at com.starrocks.catalog.TabletStatMgr.runAfterCatalogReady(TabletStatMgr.java:119)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:34.980+09:00 WARN (tablet stat mgr|33) [TabletStatMgr.updateLocalTabletStat():220] task exec error. backend[10003]
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-1
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.catalog.TabletStatMgr.updateLocalTabletStat(TabletStatMgr.java:212)
+	at com.starrocks.catalog.TabletStatMgr.runAfterCatalogReady(TabletStatMgr.java:119)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)

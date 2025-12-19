@@ -1,0 +1,84 @@
+version: "3.9"
+
+# [공통 설정] BE(Backend) 설정
+x-be-common: &be-common
+  image: starrocks/be-ubuntu:latest
+  restart: always
+  environment:
+    - HOST_TYPE=FQDN
+    - TZ=Asia/Seoul
+    - STARROCKS_PRIORITY_NETWORKS=10.100.0.0/24
+    # BE는 Java 힙 외에도 네이티브 메모리를 많이 사용하므로 리소스 제한에 유의해야 합니다.
+    # 필요시 sysctl 설정을 호스트에서 확인해야 합니다 (vm.max_map_count 등)
+
+  # [로그 설정] 요청하신 대로 1GB (200MB x 5개) 제한 유지
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "200m"
+      max-file: "5"
+
+services:
+  # ==========================================
+  # BE Node 0
+  # ==========================================
+  starrocks-be-0:
+    <<: *be-common
+    hostname: starrocks-be-0
+    container_name: starrocks-be-0
+    networks:
+      default:
+        ipv4_address: 10.100.0.31  # FE(20대)와 구분을 위해 30대 할당
+    command:
+      - /bin/bash
+      - -c
+      - |
+        # BE 시작 스크립트 실행 (데몬 모드)
+        /opt/starrocks/be_entrypoint.sh starrocks-fe-0
+    volumes:
+      # BE는 meta가 아니라 storage에 데이터를 저장합니다.
+      - ./data/be-0/storage:/opt/starrocks/be/storage
+      - ./data/be-0/log:/opt/starrocks/be/log
+
+  # ==========================================
+  # BE Node 1
+  # ==========================================
+  starrocks-be-1:
+    <<: *be-common
+    hostname: starrocks-be-1
+    container_name: starrocks-be-1
+    networks:
+      default:
+        ipv4_address: 10.100.0.32
+    command:
+      - /bin/bash
+      - -c
+      - |
+        /opt/starrocks/be_entrypoint.sh starrocks-fe-0
+    volumes:
+      - ./data/be-1/storage:/opt/starrocks/be/storage
+      - ./data/be-1/log:/opt/starrocks/be/log
+
+  # ==========================================
+  # BE Node 2
+  # ==========================================
+  starrocks-be-2:
+    <<: *be-common
+    hostname: starrocks-be-2
+    container_name: starrocks-be-2
+    networks:
+      default:
+        ipv4_address: 10.100.0.33
+    command:
+      - /bin/bash
+      - -c
+      - |
+        /opt/starrocks/be_entrypoint.sh starrocks-fe-0
+    volumes:
+      - ./data/be-2/storage:/opt/starrocks/be/storage
+      - ./data/be-2/log:/opt/starrocks/be/log
+
+networks:
+  default:
+    name: dataplatform-net
+    external: true

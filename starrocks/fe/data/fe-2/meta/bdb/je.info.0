@@ -1,0 +1,759 @@
+2025-12-18 14:48:12.040 UTC INFO [starrocks-fe-2_9010_1766069290767] No server auth method
+2025-12-18 14:48:12.041 UTC INFO [starrocks-fe-2_9010_1766069290767] Started ServiceDispatcher. HostPort=starrocks-fe-2:9010
+2025-12-18 14:48:12.041 UTC INFO [starrocks-fe-2_9010_1766069290767] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2025-12-18 14:48:12.056 UTC INFO [starrocks-fe-2_9010_1766069290767] DTVLSN at start:0
+2025-12-18 14:48:12.057 UTC INFO [starrocks-fe-2_9010_1766069290767] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2025-12-18 14:48:12.061 UTC INFO [starrocks-fe-2_9010_1766069290767] Current group size: 0
+2025-12-18 14:48:12.061 UTC INFO [starrocks-fe-2_9010_1766069290767] New node starrocks-fe-2_9010_1766069290767(-1) unknown to rep group
+2025-12-18 14:48:12.065 UTC INFO [starrocks-fe-2_9010_1766069290767] Master changed to starrocks-fe-0_9010_1766069283477
+2025-12-18 14:48:12.067 UTC INFO [starrocks-fe-2_9010_1766069290767] New node starrocks-fe-2_9010_1766069290767 located master: starrocks-fe-0_9010_1766069283477(1)
+2025-12-18 14:48:12.067 UTC INFO [starrocks-fe-2_9010_1766069290767] Node starrocks-fe-2_9010_1766069290767 started
+2025-12-18 14:48:12.067 UTC INFO [starrocks-fe-2_9010_1766069290767] Transitioning node to replica state, 0 txns to clean up
+2025-12-18 14:48:12.067 UTC INFO [starrocks-fe-2_9010_1766069290767] Releasing commit block latch
+2025-12-18 14:48:12.068 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica loop started with master: starrocks-fe-0_9010_1766069283477(1)
+2025-12-18 14:48:12.069 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica-feeder handshake start
+2025-12-18 14:48:12.070 UTC INFO [starrocks-fe-2_9010_1766069290767] Shutting down node starrocks-fe-2_9010_1766069290767(-1) DTVLSN:0
+2025-12-18 14:48:12.070 UTC INFO [starrocks-fe-2_9010_1766069290767] Elections shutdown initiated
+2025-12-18 14:48:12.070 UTC INFO [starrocks-fe-2_9010_1766069290767] Acceptor Thread starrocks-fe-2_9010_1766069290767 soft shutdown initiated.
+2025-12-18 14:48:12.071 UTC INFO [starrocks-fe-2_9010_1766069290767] Learner Thread starrocks-fe-2_9010_1766069290767 soft shutdown initiated.
+2025-12-18 14:48:12.072 UTC INFO [starrocks-fe-2_9010_1766069290767] Elections shutdown completed
+2025-12-18 14:48:12.073 UTC INFO [starrocks-fe-2_9010_1766069290767] RepNode starrocks-fe-2_9010_1766069290767(-1) soft shutdown initiated.
+2025-12-18 14:48:12.073 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica IO exception: java.nio.channels.AsynchronousCloseException Message:null
+2025-12-18 14:48:12.074 UTC INFO [starrocks-fe-2_9010_1766069290767] Exiting inner Replica loop.
+2025-12-18 14:48:12.074 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica stats - Lag waits: 0 Lag wait time: 0ms.  VLSN waits: 0 Lag wait time: 0ms.
+2025-12-18 14:48:12.075 UTC INFO [starrocks-fe-2_9010_1766069290767] RepNode main thread shutting down.
+2025-12-18 14:48:12.075 UTC INFO [starrocks-fe-2_9010_1766069290767] node:NullNode(-1) state change from UNKNOWN to DETACHED
+2025-12-18 14:48:12.075 UTC INFO [starrocks-fe-2_9010_1766069290767] RepNode main thread: DETACHED starrocks-fe-2_9010_1766069290767(-1) exited.
+2025-12-18 14:48:12.075 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder Manager node: starrocks-fe-2_9010_1766069290767 soft shutdown initiated.
+2025-12-18 14:48:12.077 UTC INFO [starrocks-fe-2_9010_1766069290767] ServiceDispatcher shutdown starting. HostPort=starrocks-fe-2:9010 Registered services: []
+2025-12-18 14:48:12.078 UTC INFO [starrocks-fe-2_9010_1766069290767] ServiceDispatcher-starrocks-fe-2:9010 soft shutdown initiated.
+2025-12-18 14:48:12.079 UTC INFO [starrocks-fe-2_9010_1766069290767] ServiceDispatcher shutdown completed. HostPort=starrocks-fe-2:9010
+2025-12-18 14:48:12.079 UTC INFO [starrocks-fe-2_9010_1766069290767] starrocks-fe-2_9010_1766069290767(-1) shutdown completed.
+2025-12-18 14:48:12.085 UTC INFO [starrocks-fe-2_9010_1766069290767] JEErasure soft shutdown initiated.
+2025-12-18 14:48:12.086 UTC INFO [starrocks-fe-2_9010_1766069290767] RepairReservedFiles-starrocks-fe-2_9010_1766069290767(-1):/opt/starrocks/fe/meta/bdb soft shutdown initiated.
+2025-12-18 14:48:12.113 UTC INFO [starrocks-fe-2_9010_1766069290767] No server auth method
+2025-12-18 14:48:12.113 UTC INFO [starrocks-fe-2_9010_1766069290767] Started ServiceDispatcher. HostPort=starrocks-fe-2:9010
+2025-12-18 14:48:12.113 UTC INFO [starrocks-fe-2_9010_1766069290767] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2025-12-18 14:48:12.114 UTC INFO [starrocks-fe-2_9010_1766069290767] DTVLSN at start:0
+2025-12-18 14:48:12.114 UTC INFO [starrocks-fe-2_9010_1766069290767] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2025-12-18 14:48:12.115 UTC INFO [starrocks-fe-2_9010_1766069290767] Current group size: 0
+2025-12-18 14:48:12.115 UTC INFO [starrocks-fe-2_9010_1766069290767] New node starrocks-fe-2_9010_1766069290767(-1) unknown to rep group
+2025-12-18 14:48:12.116 UTC INFO [starrocks-fe-2_9010_1766069290767] Master changed to starrocks-fe-0_9010_1766069283477
+2025-12-18 14:48:12.117 UTC INFO [starrocks-fe-2_9010_1766069290767] New node starrocks-fe-2_9010_1766069290767 located master: starrocks-fe-0_9010_1766069283477(1)
+2025-12-18 14:48:12.117 UTC INFO [starrocks-fe-2_9010_1766069290767] Node starrocks-fe-2_9010_1766069290767 started
+2025-12-18 14:48:12.117 UTC INFO [starrocks-fe-2_9010_1766069290767] Transitioning node to replica state, 0 txns to clean up
+2025-12-18 14:48:12.117 UTC INFO [starrocks-fe-2_9010_1766069290767] Releasing commit block latch
+2025-12-18 14:48:12.118 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica loop started with master: starrocks-fe-0_9010_1766069283477(1)
+2025-12-18 14:48:12.118 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica-feeder handshake start
+2025-12-18 14:48:12.123 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica-feeder starrocks-fe-0_9010_1766069283477 handshake completed.
+2025-12-18 14:48:12.124 UTC INFO [starrocks-fe-2_9010_1766069290767] node:starrocks-fe-0_9010_1766069283477(1) state change from UNKNOWN to REPLICA
+2025-12-18 14:48:12.125 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica-feeder starrocks-fe-0_9010_1766069283477 syncup started. Replica range: first=-1 last=-1 sync=-1 txnEnd=-1
+2025-12-18 14:48:12.129 UTC INFO [starrocks-fe-2_9010_1766069290767] Rollback to matchpoint -1 at 0x0/0x0 status=No active txns, nothing to rollback
+2025-12-18 14:48:12.129 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica-feeder starrocks-fe-0_9010_1766069283477 start stream at VLSN: 1
+2025-12-18 14:48:12.129 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica-feeder starrocks-fe-0_9010_1766069283477 syncup ended. Elapsed time: 4ms
+2025-12-18 14:48:12.131 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica initialization completed. Replica VLSN: -1  Heartbeat master commit VLSN: 43  DTVLSN:0 Replica VLSN delta: 44
+2025-12-18 14:48:12.132 UTC INFO [starrocks-fe-2_9010_1766069290767] Replica output thread started. Queue size:2000 Max grouped acks:170
+2025-12-18 14:48:12.132 UTC INFO [starrocks-fe-2_9010_1766069290767] Replay thread started. Message queue size:1000
+2025-12-18 14:48:13.244 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@45a0732a, service: null - read() returned: -1
+2025-12-18 14:49:09.895 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@38609143, service: null - read() returned: -1
+2025-12-18 14:49:33.520 UTC INFO [starrocks-fe-2_9010_1766069290767] No server auth method
+2025-12-18 14:49:33.522 UTC INFO [starrocks-fe-2_9010_1766069290767] Started ServiceDispatcher. HostPort=starrocks-fe-2:9010
+2025-12-18 14:49:33.523 UTC INFO [starrocks-fe-2_9010_1766069290767] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2025-12-18 14:49:33.547 UTC INFO [starrocks-fe-2_9010_1766069290767] DTVLSN at start:130
+2025-12-18 14:49:33.549 UTC INFO [starrocks-fe-2_9010_1766069290767] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2025-12-18 14:49:33.557 UTC INFO [starrocks-fe-2_9010_1766069290767] Current group size: 3
+2025-12-18 14:49:33.557 UTC INFO [starrocks-fe-2_9010_1766069290767] Existing node starrocks-fe-2_9010_1766069290767 querying for a current master.
+2025-12-18 14:49:33.562 UTC INFO [starrocks-fe-2_9010_1766069290767] Node starrocks-fe-2_9010_1766069290767 started
+2025-12-18 14:49:33.562 UTC INFO [starrocks-fe-2_9010_1766069290767] Election initiated; election #1
+2025-12-18 14:49:33.565 UTC INFO [starrocks-fe-2_9010_1766069290767] Started election thread Thu Dec 18 23:49:33 KST 2025
+2025-12-18 14:49:33.600 UTC INFO [starrocks-fe-2_9010_1766069290767] Master changed to starrocks-fe-2_9010_1766069290767
+2025-12-18 14:49:33.601 UTC INFO [starrocks-fe-2_9010_1766069290767] Exiting election after 2 retries
+2025-12-18 14:49:33.601 UTC INFO [starrocks-fe-2_9010_1766069290767] Election thread exited. Group master: starrocks-fe-2_9010_1766069290767(3)
+2025-12-18 14:49:33.602 UTC INFO [starrocks-fe-2_9010_1766069290767] Election finished. Elapsed time: 38ms
+2025-12-18 14:49:33.603 UTC INFO [starrocks-fe-2_9010_1766069290767] node:starrocks-fe-2_9010_1766069290767(3) state change from UNKNOWN to MASTER
+2025-12-18 14:49:33.604 UTC INFO [starrocks-fe-2_9010_1766069290767] Request for unknown Service: Feeder Registered services: [Group, Acceptor, NodeState, LogFileFeeder, LDiff, BinaryNodeState, Learner]
+2025-12-18 14:49:33.605 UTC INFO [starrocks-fe-2_9010_1766069290767] Request for unknown Service: Feeder Registered services: [Group, Acceptor, NodeState, LogFileFeeder, LDiff, BinaryNodeState, Learner]
+2025-12-18 14:49:33.604 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder manager accepting requests.
+2025-12-18 14:49:33.714 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder accepted connection from /10.100.0.22:37831
+2025-12-18 14:49:33.717 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder accepted connection from /10.100.0.21:55535
+2025-12-18 14:49:33.718 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 14:49:33.718 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 14:49:33.718 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 14:49:33.718 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 14:49:33.724 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 handshake completed. Replica starrocks-fe-0_9010_1766069283477 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 14:49:33.724 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 handshake completed. Replica starrocks-fe-0_9010_1766069283477 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 14:49:33.724 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 handshake completed. Replica starrocks-fe-1_9010_1766069290773 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 14:49:33.724 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 handshake completed. Replica starrocks-fe-1_9010_1766069290773 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 14:49:33.725 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup started. Feeder range: first=1 last=130 sync=130 txnEnd=130
+2025-12-18 14:49:33.725 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup started. Feeder range: first=1 last=130 sync=130 txnEnd=130
+2025-12-18 14:49:33.725 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup started. Feeder range: first=1 last=130 sync=130 txnEnd=130
+2025-12-18 14:49:33.725 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup started. Feeder range: first=1 last=130 sync=130 txnEnd=130
+2025-12-18 14:49:33.734 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 start stream at VLSN: 131
+2025-12-18 14:49:33.734 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 start stream at VLSN: 131
+2025-12-18 14:49:33.734 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 start stream at VLSN: 131
+2025-12-18 14:49:33.734 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 start stream at VLSN: 131
+2025-12-18 14:49:33.735 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup ended. Elapsed time: 10ms
+2025-12-18 14:49:33.735 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup ended. Elapsed time: 10ms
+2025-12-18 14:49:33.735 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup ended. Elapsed time: 10ms
+2025-12-18 14:49:33.735 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup ended. Elapsed time: 10ms
+2025-12-18 14:49:33.736 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder output thread for replica starrocks-fe-1_9010_1766069290773 started at VLSN 131 master at 130 (DTVLSN:130) VLSN delta=-1 socket=(starrocks-fe-1_9010_1766069290773(2))com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5e781315
+2025-12-18 14:49:33.736 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder output thread for replica starrocks-fe-0_9010_1766069283477 started at VLSN 131 master at 130 (DTVLSN:130) VLSN delta=-1 socket=(starrocks-fe-0_9010_1766069283477(1))com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4c98218b
+2025-12-18 14:49:34.799 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7153377e, service: null - read() returned: -1
+2025-12-18 14:49:34.811 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@185f4e02, service: null - read() returned: -1
+2025-12-18 14:49:45.085 UTC INFO [starrocks-fe-2_9010_1766069290767] Start DB remove/truncate scan, id=1 dbId=-259 dbName=1
+2025-12-18 14:49:45.087 UTC INFO [starrocks-fe-2_9010_1766069290767] End DB remove/truncate scan, id=1 scanned=46 dbId=-259 dbName=1
+2025-12-18 14:50:35.806 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3854b176, service: null - read() returned: -1
+2025-12-18 14:50:35.827 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@54dc7693, service: null - read() returned: -1
+2025-12-18 14:51:35.808 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@30f2379d, service: null - read() returned: -1
+2025-12-18 14:51:35.830 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@48ff8a0a, service: null - read() returned: -1
+2025-12-18 14:52:35.810 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@43e8d057, service: null - read() returned: -1
+2025-12-18 14:52:35.830 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@8b08d77, service: null - read() returned: -1
+2025-12-18 14:53:35.814 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@55ea8c6e, service: null - read() returned: -1
+2025-12-18 14:53:35.831 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3a0c5317, service: null - read() returned: -1
+2025-12-18 14:54:35.822 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@475f0253, service: null - read() returned: -1
+2025-12-18 14:54:35.835 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@74ff2c87, service: null - read() returned: -1
+2025-12-18 14:55:35.824 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@365fecd8, service: null - read() returned: -1
+2025-12-18 14:55:35.837 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@d7b4f4e, service: null - read() returned: -1
+2025-12-18 14:56:35.827 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2497b097, service: null - read() returned: -1
+2025-12-18 14:56:35.838 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1d442826, service: null - read() returned: -1
+2025-12-18 14:59:35.586 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@543fc8a8, service: null - read() returned: -1
+2025-12-18 14:59:35.597 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@32369372, service: null - read() returned: -1
+2025-12-18 15:00:35.588 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7be4cef1, service: null - read() returned: -1
+2025-12-18 15:00:35.598 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@f4e7aba, service: null - read() returned: -1
+2025-12-18 15:01:35.595 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2273bc7a, service: null - read() returned: -1
+2025-12-18 15:01:35.603 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@79f9ae1d, service: null - read() returned: -1
+2025-12-18 15:01:59.759 UTC INFO [starrocks-fe-2_9010_1766069290767] Start verify of data files
+2025-12-18 15:02:08.306 UTC INFO [starrocks-fe-2_9010_1766069290767] End verify of data files
+2025-12-18 15:02:08.307 UTC INFO [starrocks-fe-2_9010_1766069290767] Start verify all databases
+2025-12-18 15:02:08.317 UTC INFO [starrocks-fe-2_9010_1766069290767] End verify all databases
+2025-12-18 15:02:35.602 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@524efa94, service: null - read() returned: -1
+2025-12-18 15:02:35.606 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@176127ac, service: null - read() returned: -1
+2025-12-18 15:03:35.605 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5703a89c, service: null - read() returned: -1
+2025-12-18 15:03:35.609 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@d3d9f78, service: null - read() returned: -1
+2025-12-18 15:04:35.612 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@56adc054, service: null - read() returned: -1
+2025-12-18 15:04:35.617 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@58adea8d, service: null - read() returned: -1
+2025-12-18 15:05:35.621 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7ae08a9a, service: null - read() returned: -1
+2025-12-18 15:05:35.623 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@27ea7eea, service: null - read() returned: -1
+2025-12-18 15:06:35.626 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@21405a8b, service: null - read() returned: -1
+2025-12-18 15:06:35.630 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6582fb34, service: null - read() returned: -1
+2025-12-18 15:07:35.636 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3ba7241, service: null - read() returned: -1
+2025-12-18 15:07:35.640 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@71936259, service: null - read() returned: -1
+2025-12-18 15:08:35.644 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3e187871, service: null - read() returned: -1
+2025-12-18 15:08:35.646 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@54f34441, service: null - read() returned: -1
+2025-12-18 15:09:35.650 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4e65b3cb, service: null - read() returned: -1
+2025-12-18 15:09:35.655 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7d5c0af3, service: null - read() returned: -1
+2025-12-18 15:10:35.662 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@c63d19b, service: null - read() returned: -1
+2025-12-18 15:10:35.665 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3e95a331, service: null - read() returned: -1
+2025-12-18 15:11:35.665 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1d40262e, service: null - read() returned: -1
+2025-12-18 15:11:35.671 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3417cae3, service: null - read() returned: -1
+2025-12-18 15:12:35.667 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@492cdf63, service: null - read() returned: -1
+2025-12-18 15:12:35.674 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2742a8e7, service: null - read() returned: -1
+2025-12-18 15:17:37.179 UTC INFO [starrocks-fe-2_9010_1766069290767] No server auth method
+2025-12-18 15:17:37.181 UTC INFO [starrocks-fe-2_9010_1766069290767] Started ServiceDispatcher. HostPort=starrocks-fe-2:9010
+2025-12-18 15:17:37.183 UTC INFO [starrocks-fe-2_9010_1766069290767] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2025-12-18 15:17:37.200 UTC INFO [starrocks-fe-2_9010_1766069290767] DTVLSN at start:2,343
+2025-12-18 15:17:37.201 UTC INFO [starrocks-fe-2_9010_1766069290767] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2025-12-18 15:17:37.207 UTC INFO [starrocks-fe-2_9010_1766069290767] Current group size: 3
+2025-12-18 15:17:37.207 UTC INFO [starrocks-fe-2_9010_1766069290767] Existing node starrocks-fe-2_9010_1766069290767 querying for a current master.
+2025-12-18 15:17:37.214 UTC INFO [starrocks-fe-2_9010_1766069290767] Node starrocks-fe-2_9010_1766069290767 started
+2025-12-18 15:17:37.215 UTC INFO [starrocks-fe-2_9010_1766069290767] Election initiated; election #1
+2025-12-18 15:17:37.217 UTC INFO [starrocks-fe-2_9010_1766069290767] Started election thread Fri Dec 19 00:17:37 KST 2025
+2025-12-18 15:17:37.247 UTC INFO [starrocks-fe-2_9010_1766069290767] Master changed to starrocks-fe-2_9010_1766069290767
+2025-12-18 15:17:37.249 UTC INFO [starrocks-fe-2_9010_1766069290767] Exiting election after 2 retries
+2025-12-18 15:17:37.249 UTC INFO [starrocks-fe-2_9010_1766069290767] Election finished. Elapsed time: 34ms
+2025-12-18 15:17:37.249 UTC INFO [starrocks-fe-2_9010_1766069290767] Request for unknown Service: Feeder Registered services: [Group, Acceptor, NodeState, LogFileFeeder, LDiff, BinaryNodeState, Learner]
+2025-12-18 15:17:37.254 UTC INFO [starrocks-fe-2_9010_1766069290767] Request for unknown Service: Feeder Registered services: [Group, Acceptor, NodeState, LogFileFeeder, LDiff, BinaryNodeState, Learner]
+2025-12-18 15:17:37.254 UTC INFO [starrocks-fe-2_9010_1766069290767] node:starrocks-fe-2_9010_1766069290767(3) state change from UNKNOWN to MASTER
+2025-12-18 15:17:37.251 UTC INFO [starrocks-fe-2_9010_1766069290767] Election thread exited. Group master: starrocks-fe-2_9010_1766069290767(3)
+2025-12-18 15:17:37.256 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder manager accepting requests.
+2025-12-18 15:17:37.358 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder accepted connection from /10.100.0.22:44229
+2025-12-18 15:17:37.360 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder accepted connection from /10.100.0.21:44899
+2025-12-18 15:17:37.361 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 15:17:37.361 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 15:17:37.361 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 15:17:37.361 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 15:17:37.367 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 handshake completed. Replica starrocks-fe-0_9010_1766069283477 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 15:17:37.367 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 handshake completed. Replica starrocks-fe-0_9010_1766069283477 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 15:17:37.367 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 handshake completed. Replica starrocks-fe-1_9010_1766069290773 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 15:17:37.367 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 handshake completed. Replica starrocks-fe-1_9010_1766069290773 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 15:17:37.368 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup started. Feeder range: first=1 last=2,345 sync=2,345 txnEnd=2,345
+2025-12-18 15:17:37.368 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup started. Feeder range: first=1 last=2,345 sync=2,345 txnEnd=2,345
+2025-12-18 15:17:37.368 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup started. Feeder range: first=1 last=2,345 sync=2,345 txnEnd=2,345
+2025-12-18 15:17:37.368 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup started. Feeder range: first=1 last=2,345 sync=2,345 txnEnd=2,345
+2025-12-18 15:17:37.377 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 start stream at VLSN: 2,346
+2025-12-18 15:17:37.377 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 start stream at VLSN: 2,346
+2025-12-18 15:17:37.378 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 start stream at VLSN: 2,346
+2025-12-18 15:17:37.378 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 start stream at VLSN: 2,346
+2025-12-18 15:17:37.379 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup ended. Elapsed time: 11ms
+2025-12-18 15:17:37.379 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup ended. Elapsed time: 11ms
+2025-12-18 15:17:37.379 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup ended. Elapsed time: 11ms
+2025-12-18 15:17:37.379 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup ended. Elapsed time: 11ms
+2025-12-18 15:17:37.380 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder output thread for replica starrocks-fe-0_9010_1766069283477 started at VLSN 2,346 master at 2,345 (DTVLSN:2,343) VLSN delta=-1 socket=(starrocks-fe-0_9010_1766069283477(1))com.sleepycat.je.rep.utilint.net.SimpleDataChannel@244c5357
+2025-12-18 15:17:37.380 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder output thread for replica starrocks-fe-1_9010_1766069290773 started at VLSN 2,346 master at 2,345 (DTVLSN:2,343) VLSN delta=-1 socket=(starrocks-fe-1_9010_1766069290773(2))com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3004956e
+2025-12-18 15:17:38.955 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2038698a, service: null - read() returned: -1
+2025-12-18 15:17:39.059 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7c40712d, service: null - read() returned: -1
+2025-12-18 15:17:49.409 UTC INFO [starrocks-fe-2_9010_1766069290767] Start DB remove/truncate scan, id=2 dbId=-260 dbName=47
+2025-12-18 15:17:49.413 UTC INFO [starrocks-fe-2_9010_1766069290767] End DB remove/truncate scan, id=2 scanned=1011 dbId=-260 dbName=47
+2025-12-18 15:18:39.961 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5a2eb6d4, service: null - read() returned: -1
+2025-12-18 15:18:40.072 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@455349a8, service: null - read() returned: -1
+2025-12-18 15:20:53.426 UTC INFO [starrocks-fe-2_9010_1766069290767] No server auth method
+2025-12-18 15:20:53.431 UTC INFO [starrocks-fe-2_9010_1766069290767] Started ServiceDispatcher. HostPort=starrocks-fe-2:9010
+2025-12-18 15:20:53.431 UTC INFO [starrocks-fe-2_9010_1766069290767] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2025-12-18 15:20:53.459 UTC INFO [starrocks-fe-2_9010_1766069290767] DTVLSN at start:2,447
+2025-12-18 15:20:53.459 UTC INFO [starrocks-fe-2_9010_1766069290767] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2025-12-18 15:20:53.465 UTC INFO [starrocks-fe-2_9010_1766069290767] Current group size: 3
+2025-12-18 15:20:53.466 UTC INFO [starrocks-fe-2_9010_1766069290767] Existing node starrocks-fe-2_9010_1766069290767 querying for a current master.
+2025-12-18 15:20:53.472 UTC INFO [starrocks-fe-2_9010_1766069290767] Node starrocks-fe-2_9010_1766069290767 started
+2025-12-18 15:20:53.473 UTC INFO [starrocks-fe-2_9010_1766069290767] Election initiated; election #1
+2025-12-18 15:20:53.476 UTC INFO [starrocks-fe-2_9010_1766069290767] Started election thread Fri Dec 19 00:20:53 KST 2025
+2025-12-18 15:20:53.504 UTC INFO [starrocks-fe-2_9010_1766069290767] Master changed to starrocks-fe-2_9010_1766069290767
+2025-12-18 15:20:53.505 UTC INFO [starrocks-fe-2_9010_1766069290767] Exiting election after 2 retries
+2025-12-18 15:20:53.505 UTC INFO [starrocks-fe-2_9010_1766069290767] Election thread exited. Group master: starrocks-fe-2_9010_1766069290767(3)
+2025-12-18 15:20:53.505 UTC INFO [starrocks-fe-2_9010_1766069290767] Election finished. Elapsed time: 32ms
+2025-12-18 15:20:53.508 UTC INFO [starrocks-fe-2_9010_1766069290767] Request for unknown Service: Feeder Registered services: [Group, Acceptor, NodeState, LogFileFeeder, LDiff, BinaryNodeState, Learner]
+2025-12-18 15:20:53.508 UTC INFO [starrocks-fe-2_9010_1766069290767] node:starrocks-fe-2_9010_1766069290767(3) state change from UNKNOWN to MASTER
+2025-12-18 15:20:53.511 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder manager accepting requests.
+2025-12-18 15:20:53.513 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder accepted connection from /10.100.0.22:33693
+2025-12-18 15:20:53.519 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 15:20:53.525 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 handshake completed. Replica starrocks-fe-1_9010_1766069290773 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 15:20:53.526 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup started. Feeder range: first=1 last=2,449 sync=2,449 txnEnd=2,449
+2025-12-18 15:20:53.537 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 start stream at VLSN: 2,450
+2025-12-18 15:20:53.538 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-1_9010_1766069290773 syncup ended. Elapsed time: 12ms
+2025-12-18 15:20:53.540 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder output thread for replica starrocks-fe-1_9010_1766069290773 started at VLSN 2,450 master at 2,449 (DTVLSN:2,447) VLSN delta=-1 socket=(starrocks-fe-1_9010_1766069290773(2))com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1dd60f7f
+2025-12-18 15:20:53.617 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder accepted connection from /10.100.0.21:54081
+2025-12-18 15:20:53.618 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica handshake start
+2025-12-18 15:20:53.622 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 handshake completed. Replica starrocks-fe-0_9010_1766069283477 Versions JE: 18.3.20 Log: 17 Protocol: 9 Stream Log: 16
+2025-12-18 15:20:53.622 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup started. Feeder range: first=1 last=2,449 sync=2,449 txnEnd=2,449
+2025-12-18 15:20:53.630 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 start stream at VLSN: 2,450
+2025-12-18 15:20:53.630 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder-replica starrocks-fe-0_9010_1766069283477 syncup ended. Elapsed time: 8ms
+2025-12-18 15:20:53.631 UTC INFO [starrocks-fe-2_9010_1766069290767] Feeder output thread for replica starrocks-fe-0_9010_1766069283477 started at VLSN 2,450 master at 2,449 (DTVLSN:2,447) VLSN delta=-1 socket=(starrocks-fe-0_9010_1766069283477(1))com.sleepycat.je.rep.utilint.net.SimpleDataChannel@612bb2bb
+2025-12-18 15:20:55.040 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@11d931e6, service: null - read() returned: -1
+2025-12-18 15:20:55.040 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1d783841, service: null - read() returned: -1
+2025-12-18 15:21:05.539 UTC INFO [starrocks-fe-2_9010_1766069290767] Start DB remove/truncate scan, id=3 dbId=-262 dbName=1050
+2025-12-18 15:21:05.542 UTC INFO [starrocks-fe-2_9010_1766069290767] End DB remove/truncate scan, id=3 scanned=39 dbId=-262 dbName=1050
+2025-12-18 15:21:56.047 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5c1424, service: null - read() returned: -1
+2025-12-18 15:21:56.049 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5c3a8e5e, service: null - read() returned: -1
+2025-12-18 15:22:56.053 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1649554f, service: null - read() returned: -1
+2025-12-18 15:22:56.055 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1e8971a6, service: null - read() returned: -1
+2025-12-18 15:23:56.056 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4b945c7b, service: null - read() returned: -1
+2025-12-18 15:23:56.058 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@42facc79, service: null - read() returned: -1
+2025-12-18 15:24:56.060 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3618267, service: null - read() returned: -1
+2025-12-18 15:24:56.062 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5cd735d5, service: null - read() returned: -1
+2025-12-18 15:25:56.063 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4222322a, service: null - read() returned: -1
+2025-12-18 15:25:56.064 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3af4ab51, service: null - read() returned: -1
+2025-12-18 15:26:56.067 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5b63ba98, service: null - read() returned: -1
+2025-12-18 15:26:56.068 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@59001f40, service: null - read() returned: -1
+2025-12-18 15:27:56.073 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@469bb2a8, service: null - read() returned: -1
+2025-12-18 15:27:56.075 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1f384f24, service: null - read() returned: -1
+2025-12-18 15:28:56.083 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@57a48066, service: null - read() returned: -1
+2025-12-18 15:28:56.088 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@11ad5115, service: null - read() returned: -1
+2025-12-18 15:29:56.095 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3c20c02b, service: null - read() returned: -1
+2025-12-18 15:29:56.096 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@477e1b43, service: null - read() returned: -1
+2025-12-18 15:30:56.095 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@144f7afe, service: null - read() returned: -1
+2025-12-18 15:30:56.096 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1947634e, service: null - read() returned: -1
+2025-12-18 15:31:56.095 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2c6b9768, service: null - read() returned: -1
+2025-12-18 15:31:56.097 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6c6f31a, service: null - read() returned: -1
+2025-12-18 15:32:56.100 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@38a8268a, service: null - read() returned: -1
+2025-12-18 15:32:56.101 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@9474ca6, service: null - read() returned: -1
+2025-12-18 15:33:56.102 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@ee7ccc, service: null - read() returned: -1
+2025-12-18 15:33:56.104 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@33ff220b, service: null - read() returned: -1
+2025-12-18 15:34:56.106 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4627d8b7, service: null - read() returned: -1
+2025-12-18 15:34:56.108 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7f795779, service: null - read() returned: -1
+2025-12-18 15:35:56.109 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@687fc57c, service: null - read() returned: -1
+2025-12-18 15:35:56.110 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@e222790, service: null - read() returned: -1
+2025-12-18 15:36:56.114 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@32bfd09e, service: null - read() returned: -1
+2025-12-18 15:36:56.115 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2d3e6ffe, service: null - read() returned: -1
+2025-12-18 15:37:56.116 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2847eadd, service: null - read() returned: -1
+2025-12-18 15:37:56.117 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3aaf369c, service: null - read() returned: -1
+2025-12-18 15:38:56.124 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@26ed1a7e, service: null - read() returned: -1
+2025-12-18 15:38:56.127 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@645649d, service: null - read() returned: -1
+2025-12-18 15:39:56.132 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@21cbc545, service: null - read() returned: -1
+2025-12-18 15:39:56.134 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@24392ab6, service: null - read() returned: -1
+2025-12-18 15:40:56.136 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6ccac6f9, service: null - read() returned: -1
+2025-12-18 15:40:56.137 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@26adebae, service: null - read() returned: -1
+2025-12-18 15:41:56.139 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@294a8b56, service: null - read() returned: -1
+2025-12-18 15:41:56.142 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4b53c24c, service: null - read() returned: -1
+2025-12-18 15:42:56.139 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4e9dc71f, service: null - read() returned: -1
+2025-12-18 15:42:56.141 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4cfd0422, service: null - read() returned: -1
+2025-12-18 15:43:56.143 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@58eca286, service: null - read() returned: -1
+2025-12-18 15:43:56.144 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2a8c42ee, service: null - read() returned: -1
+2025-12-18 15:44:56.144 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@26ac9502, service: null - read() returned: -1
+2025-12-18 15:44:56.145 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4479beb3, service: null - read() returned: -1
+2025-12-18 15:45:56.145 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@52611be0, service: null - read() returned: -1
+2025-12-18 15:45:56.148 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7a5e151, service: null - read() returned: -1
+2025-12-18 15:46:56.147 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7109a540, service: null - read() returned: -1
+2025-12-18 15:46:56.149 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5572d82d, service: null - read() returned: -1
+2025-12-18 15:47:56.149 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2a6d205b, service: null - read() returned: -1
+2025-12-18 15:47:56.153 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3cb00891, service: null - read() returned: -1
+2025-12-18 15:48:56.152 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7cce7a8c, service: null - read() returned: -1
+2025-12-18 15:48:56.154 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3f1ec22e, service: null - read() returned: -1
+2025-12-18 15:49:56.156 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1897010a, service: null - read() returned: -1
+2025-12-18 15:49:56.159 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6703d007, service: null - read() returned: -1
+2025-12-18 15:50:56.160 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@40a2e4a0, service: null - read() returned: -1
+2025-12-18 15:50:56.161 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3c5a78cc, service: null - read() returned: -1
+2025-12-18 15:51:56.164 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@62a94632, service: null - read() returned: -1
+2025-12-18 15:51:56.173 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@48e315f5, service: null - read() returned: -1
+2025-12-18 15:52:56.164 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1c4848a0, service: null - read() returned: -1
+2025-12-18 15:52:56.175 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6fc91ed5, service: null - read() returned: -1
+2025-12-18 15:53:56.168 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4510e32f, service: null - read() returned: -1
+2025-12-18 15:53:56.180 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@720e3e7b, service: null - read() returned: -1
+2025-12-18 15:54:56.169 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@362d9f60, service: null - read() returned: -1
+2025-12-18 15:54:56.182 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@55c80ea9, service: null - read() returned: -1
+2025-12-18 15:55:56.172 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4b7cf04a, service: null - read() returned: -1
+2025-12-18 15:55:56.186 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@387bd18d, service: null - read() returned: -1
+2025-12-18 15:56:56.175 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@915298, service: null - read() returned: -1
+2025-12-18 15:56:56.189 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@52994818, service: null - read() returned: -1
+2025-12-18 15:57:56.183 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6cae8c26, service: null - read() returned: -1
+2025-12-18 15:57:56.192 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@16366c, service: null - read() returned: -1
+2025-12-18 15:58:56.184 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@76310187, service: null - read() returned: -1
+2025-12-18 15:58:56.194 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@64f6c2f5, service: null - read() returned: -1
+2025-12-18 15:59:56.188 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@47f02245, service: null - read() returned: -1
+2025-12-18 15:59:56.196 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@51bebb95, service: null - read() returned: -1
+2025-12-18 16:00:56.190 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3707334d, service: null - read() returned: -1
+2025-12-18 16:00:56.199 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7925a914, service: null - read() returned: -1
+2025-12-18 16:01:56.203 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@18538dad, service: null - read() returned: -1
+2025-12-18 16:01:56.206 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@f53b8ca, service: null - read() returned: -1
+2025-12-18 16:02:56.204 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1f76bba3, service: null - read() returned: -1
+2025-12-18 16:02:56.208 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@ab1707, service: null - read() returned: -1
+2025-12-18 16:03:56.208 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5202b3e3, service: null - read() returned: -1
+2025-12-18 16:03:56.215 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7bd706f0, service: null - read() returned: -1
+2025-12-18 16:04:56.210 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@594c34cf, service: null - read() returned: -1
+2025-12-18 16:04:56.218 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5844c5b1, service: null - read() returned: -1
+2025-12-18 16:05:56.215 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4ea44308, service: null - read() returned: -1
+2025-12-18 16:05:56.220 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1677f96f, service: null - read() returned: -1
+2025-12-18 16:06:56.224 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3b4ab1df, service: null - read() returned: -1
+2025-12-18 16:06:56.227 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7cd54dd7, service: null - read() returned: -1
+2025-12-18 16:07:56.228 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@154357bd, service: null - read() returned: -1
+2025-12-18 16:07:56.237 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@15ec7524, service: null - read() returned: -1
+2025-12-18 18:09:05.404 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2feb94ab, service: null - read() returned: -1
+2025-12-18 18:09:05.405 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@13889475, service: null - read() returned: -1
+2025-12-18 20:43:55.102 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@16549e65, service: null - read() returned: -1
+2025-12-18 20:43:55.103 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@78eff0b7, service: null - read() returned: -1
+2025-12-18 21:32:56.034 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@67bbe00b, service: null - read() returned: -1
+2025-12-18 21:32:56.036 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@506555ec, service: null - read() returned: -1
+2025-12-18 23:34:19.493 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4a31347b, service: null - read() returned: -1
+2025-12-18 23:34:19.495 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@24f24333, service: null - read() returned: -1
+2025-12-18 23:50:30.379 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@43e9680, service: null - read() returned: -1
+2025-12-18 23:50:30.380 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7953730b, service: null - read() returned: -1
+2025-12-18 23:51:30.387 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3179b0cd, service: null - read() returned: -1
+2025-12-18 23:51:30.390 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6e33d309, service: null - read() returned: -1
+2025-12-18 23:52:30.394 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4e482704, service: null - read() returned: -1
+2025-12-18 23:52:30.397 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@634161e4, service: null - read() returned: -1
+2025-12-18 23:53:30.401 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@62d242b, service: null - read() returned: -1
+2025-12-18 23:53:30.403 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2fc84a48, service: null - read() returned: -1
+2025-12-18 23:54:30.408 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5bf2a934, service: null - read() returned: -1
+2025-12-18 23:54:30.410 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@336f48d, service: null - read() returned: -1
+2025-12-18 23:55:30.414 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7717e85c, service: null - read() returned: -1
+2025-12-18 23:55:30.418 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@26ddb236, service: null - read() returned: -1
+2025-12-18 23:56:30.422 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@aa42944, service: null - read() returned: -1
+2025-12-18 23:56:30.423 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@41a37624, service: null - read() returned: -1
+2025-12-18 23:57:30.425 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@483e6c52, service: null - read() returned: -1
+2025-12-18 23:57:30.426 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@12f62127, service: null - read() returned: -1
+2025-12-18 23:58:30.435 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@525793c6, service: null - read() returned: -1
+2025-12-18 23:58:30.436 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4a6cc22a, service: null - read() returned: -1
+2025-12-18 23:59:30.439 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@b04245b, service: null - read() returned: -1
+2025-12-18 23:59:30.442 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4f4416fa, service: null - read() returned: -1
+2025-12-19 00:00:30.445 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1a00e62c, service: null - read() returned: -1
+2025-12-19 00:00:30.449 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@39ec834b, service: null - read() returned: -1
+2025-12-19 00:01:30.420 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@75c90ca0, service: null - read() returned: -1
+2025-12-19 00:01:30.423 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7ba45a85, service: null - read() returned: -1
+2025-12-19 00:02:30.424 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@325a19b, service: null - read() returned: -1
+2025-12-19 00:02:30.426 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7c0ea52, service: null - read() returned: -1
+2025-12-19 00:03:30.430 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@375aa48c, service: null - read() returned: -1
+2025-12-19 00:03:30.433 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@26ab1f53, service: null - read() returned: -1
+2025-12-19 00:04:30.430 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@322683c3, service: null - read() returned: -1
+2025-12-19 00:04:30.433 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2544ff91, service: null - read() returned: -1
+2025-12-19 00:05:30.438 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@22dd3922, service: null - read() returned: -1
+2025-12-19 00:05:30.440 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@221feec1, service: null - read() returned: -1
+2025-12-19 00:06:30.445 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@51ec6e07, service: null - read() returned: -1
+2025-12-19 00:06:30.448 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@55d518e, service: null - read() returned: -1
+2025-12-19 00:07:30.452 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@37c2ba03, service: null - read() returned: -1
+2025-12-19 00:07:30.455 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4e2e7927, service: null - read() returned: -1
+2025-12-19 00:08:30.454 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@a93a6a0, service: null - read() returned: -1
+2025-12-19 00:08:30.456 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1291341a, service: null - read() returned: -1
+2025-12-19 00:09:30.461 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@35abb233, service: null - read() returned: -1
+2025-12-19 00:09:30.463 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5d052107, service: null - read() returned: -1
+2025-12-19 00:10:30.474 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7b7ecae4, service: null - read() returned: -1
+2025-12-19 00:10:30.475 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@f07c195, service: null - read() returned: -1
+2025-12-19 00:11:30.480 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@77072202, service: null - read() returned: -1
+2025-12-19 00:11:30.483 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4b998254, service: null - read() returned: -1
+2025-12-19 00:12:30.485 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@78791cac, service: null - read() returned: -1
+2025-12-19 00:12:30.487 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1a4cea0e, service: null - read() returned: -1
+2025-12-19 00:17:41.549 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1d8d2904, service: null - read() returned: -1
+2025-12-19 00:17:41.551 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7f352a6b, service: null - read() returned: -1
+2025-12-19 00:18:41.553 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@28656c26, service: null - read() returned: -1
+2025-12-19 00:18:41.554 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@59c3d9ec, service: null - read() returned: -1
+2025-12-19 00:19:41.558 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2334b4ba, service: null - read() returned: -1
+2025-12-19 00:19:41.560 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@757d14d0, service: null - read() returned: -1
+2025-12-19 00:20:41.561 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4c20dbf9, service: null - read() returned: -1
+2025-12-19 00:20:41.563 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@56e933b0, service: null - read() returned: -1
+2025-12-19 00:21:41.563 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6fa362fb, service: null - read() returned: -1
+2025-12-19 00:21:41.564 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@407bdd82, service: null - read() returned: -1
+2025-12-19 00:22:41.564 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@256990d8, service: null - read() returned: -1
+2025-12-19 00:22:41.565 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@64a4c305, service: null - read() returned: -1
+2025-12-19 00:23:41.570 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@103387f7, service: null - read() returned: -1
+2025-12-19 00:23:41.573 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@44c62139, service: null - read() returned: -1
+2025-12-19 00:24:41.595 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1819f84c, service: null - read() returned: -1
+2025-12-19 00:24:41.601 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@286e3843, service: null - read() returned: -1
+2025-12-19 00:25:41.598 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@25e9c0b0, service: null - read() returned: -1
+2025-12-19 00:25:41.602 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@11cf307, service: null - read() returned: -1
+2025-12-19 00:26:41.599 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@34c995d8, service: null - read() returned: -1
+2025-12-19 00:26:41.603 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@41f22e3a, service: null - read() returned: -1
+2025-12-19 00:27:41.601 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@179b7b82, service: null - read() returned: -1
+2025-12-19 00:27:41.604 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@63d46f14, service: null - read() returned: -1
+2025-12-19 00:28:41.601 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@62b15583, service: null - read() returned: -1
+2025-12-19 00:28:41.605 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@29f48119, service: null - read() returned: -1
+2025-12-19 00:29:41.601 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3c23855a, service: null - read() returned: -1
+2025-12-19 00:29:41.605 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1f9ba5d5, service: null - read() returned: -1
+2025-12-19 00:30:41.602 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5dfe64a2, service: null - read() returned: -1
+2025-12-19 00:30:41.606 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5db7fa27, service: null - read() returned: -1
+2025-12-19 00:31:41.603 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@37e92dec, service: null - read() returned: -1
+2025-12-19 00:31:41.607 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@48383bcd, service: null - read() returned: -1
+2025-12-19 00:32:41.608 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4ba93291, service: null - read() returned: -1
+2025-12-19 00:32:41.615 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@c671356, service: null - read() returned: -1
+2025-12-19 00:33:41.608 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@34cf811a, service: null - read() returned: -1
+2025-12-19 00:33:41.615 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@40fd02e7, service: null - read() returned: -1
+2025-12-19 00:34:41.609 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3e330df3, service: null - read() returned: -1
+2025-12-19 00:34:41.615 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@40079586, service: null - read() returned: -1
+2025-12-19 00:35:41.611 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@74f83422, service: null - read() returned: -1
+2025-12-19 00:35:41.616 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4aeae5ca, service: null - read() returned: -1
+2025-12-19 00:36:41.613 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3af97d30, service: null - read() returned: -1
+2025-12-19 00:36:41.618 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7e2d5e5d, service: null - read() returned: -1
+2025-12-19 00:37:41.618 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@28709d82, service: null - read() returned: -1
+2025-12-19 00:37:41.627 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7e1741a3, service: null - read() returned: -1
+2025-12-19 00:38:41.627 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@bf1381, service: null - read() returned: -1
+2025-12-19 00:38:41.632 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4f9e882a, service: null - read() returned: -1
+2025-12-19 00:39:41.632 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6326f24c, service: null - read() returned: -1
+2025-12-19 00:39:41.635 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@55daebaf, service: null - read() returned: -1
+2025-12-19 00:40:41.639 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@747f62e1, service: null - read() returned: -1
+2025-12-19 00:40:41.641 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6fd16643, service: null - read() returned: -1
+2025-12-19 00:41:41.646 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3a72c18c, service: null - read() returned: -1
+2025-12-19 00:41:41.648 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1091b8ef, service: null - read() returned: -1
+2025-12-19 00:42:41.651 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2760216e, service: null - read() returned: -1
+2025-12-19 00:42:41.654 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7f22488b, service: null - read() returned: -1
+2025-12-19 00:43:41.751 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@45b8fd5c, service: null - read() returned: -1
+2025-12-19 00:43:41.755 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4e16a3e, service: null - read() returned: -1
+2025-12-19 01:00:52.730 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4bd132fd, service: null - read() returned: -1
+2025-12-19 01:00:52.733 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7d31a8bb, service: null - read() returned: -1
+2025-12-19 01:01:52.725 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7d528d58, service: null - read() returned: -1
+2025-12-19 01:01:52.727 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@bbc196c, service: null - read() returned: -1
+2025-12-19 01:02:52.737 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6d80a1af, service: null - read() returned: -1
+2025-12-19 01:02:52.743 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3d89040a, service: null - read() returned: -1
+2025-12-19 01:05:35.695 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@217b8580, service: null - read() returned: -1
+2025-12-19 01:05:35.697 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@54a77cf1, service: null - read() returned: -1
+2025-12-19 01:06:35.703 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@16940a37, service: null - read() returned: -1
+2025-12-19 01:06:35.705 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4117382, service: null - read() returned: -1
+2025-12-19 01:07:35.709 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4b5c841d, service: null - read() returned: -1
+2025-12-19 01:07:35.712 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@59aada68, service: null - read() returned: -1
+2025-12-19 01:08:35.722 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@74b590f9, service: null - read() returned: -1
+2025-12-19 01:08:35.724 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6c0ef560, service: null - read() returned: -1
+2025-12-19 01:09:35.727 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5b3200e4, service: null - read() returned: -1
+2025-12-19 01:09:35.728 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6380199f, service: null - read() returned: -1
+2025-12-19 01:10:35.732 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@683787e6, service: null - read() returned: -1
+2025-12-19 01:10:35.736 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@11c9b7b, service: null - read() returned: -1
+2025-12-19 01:11:35.738 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3a541cdd, service: null - read() returned: -1
+2025-12-19 01:11:35.740 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@24ecc4f7, service: null - read() returned: -1
+2025-12-19 01:12:35.744 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1515bb2f, service: null - read() returned: -1
+2025-12-19 01:12:35.746 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6426fb4d, service: null - read() returned: -1
+2025-12-19 01:13:35.754 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3ce8c633, service: null - read() returned: -1
+2025-12-19 01:13:35.756 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@33741d28, service: null - read() returned: -1
+2025-12-19 01:14:35.760 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2be379f6, service: null - read() returned: -1
+2025-12-19 01:14:35.761 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3fa141a, service: null - read() returned: -1
+2025-12-19 01:15:35.765 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@65d5f23c, service: null - read() returned: -1
+2025-12-19 01:15:35.773 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@ade383, service: null - read() returned: -1
+2025-12-19 01:16:35.768 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@571a5ffd, service: null - read() returned: -1
+2025-12-19 01:16:35.776 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4829b98e, service: null - read() returned: -1
+2025-12-19 01:17:35.780 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7033b998, service: null - read() returned: -1
+2025-12-19 01:17:35.790 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6d047efa, service: null - read() returned: -1
+2025-12-19 01:18:35.791 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6a843884, service: null - read() returned: -1
+2025-12-19 01:18:35.794 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6e6a22ec, service: null - read() returned: -1
+2025-12-19 01:19:35.801 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@17b1882b, service: null - read() returned: -1
+2025-12-19 01:19:35.804 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@33e245ae, service: null - read() returned: -1
+2025-12-19 01:20:35.810 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2260cc73, service: null - read() returned: -1
+2025-12-19 01:20:35.811 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@c7d1059, service: null - read() returned: -1
+2025-12-19 01:21:35.828 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4eeabe32, service: null - read() returned: -1
+2025-12-19 01:21:35.829 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@182b8877, service: null - read() returned: -1
+2025-12-19 01:22:35.838 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7f0bd596, service: null - read() returned: -1
+2025-12-19 01:22:35.840 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3ba78230, service: null - read() returned: -1
+2025-12-19 01:23:35.845 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@e750a, service: null - read() returned: -1
+2025-12-19 01:23:35.847 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@73fd139, service: null - read() returned: -1
+2025-12-19 01:24:35.852 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@45144e06, service: null - read() returned: -1
+2025-12-19 01:24:35.854 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4f0e7c63, service: null - read() returned: -1
+2025-12-19 01:25:35.862 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@38034d2c, service: null - read() returned: -1
+2025-12-19 01:25:35.863 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3c072327, service: null - read() returned: -1
+2025-12-19 01:26:35.868 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4377f649, service: null - read() returned: -1
+2025-12-19 01:26:35.870 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@73de9883, service: null - read() returned: -1
+2025-12-19 01:27:35.873 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@13afe157, service: null - read() returned: -1
+2025-12-19 01:27:35.875 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4e368558, service: null - read() returned: -1
+2025-12-19 01:28:35.881 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7988497d, service: null - read() returned: -1
+2025-12-19 01:28:35.883 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1267ecd9, service: null - read() returned: -1
+2025-12-19 01:29:35.894 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@31781d2d, service: null - read() returned: -1
+2025-12-19 01:29:35.899 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@79f66b38, service: null - read() returned: -1
+2025-12-19 01:30:35.901 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@79441df, service: null - read() returned: -1
+2025-12-19 01:30:35.903 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4d7155be, service: null - read() returned: -1
+2025-12-19 01:32:04.422 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3b3541b7, service: null - read() returned: -1
+2025-12-19 01:32:04.424 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@59111f7d, service: null - read() returned: -1
+2025-12-19 01:33:04.425 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@323959ae, service: null - read() returned: -1
+2025-12-19 01:33:04.426 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2e68b7e3, service: null - read() returned: -1
+2025-12-19 01:34:04.430 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@13aa4a08, service: null - read() returned: -1
+2025-12-19 01:34:04.432 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@78162031, service: null - read() returned: -1
+2025-12-19 01:51:10.437 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@66618f2a, service: null - read() returned: -1
+2025-12-19 01:51:10.438 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6e04d896, service: null - read() returned: -1
+2025-12-19 02:47:45.583 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@57f4831d, service: null - read() returned: -1
+2025-12-19 02:47:45.584 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6bcd33d2, service: null - read() returned: -1
+2025-12-19 05:04:39.745 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@18f1a81e, service: null - read() returned: -1
+2025-12-19 05:04:39.746 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1aa05b71, service: null - read() returned: -1
+2025-12-19 06:07:49.368 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@15ef6ad7, service: null - read() returned: -1
+2025-12-19 06:07:49.370 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@18a83997, service: null - read() returned: -1
+2025-12-19 06:08:49.365 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@e8d4fc, service: null - read() returned: -1
+2025-12-19 06:08:49.366 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@59d531f7, service: null - read() returned: -1
+2025-12-19 06:09:49.376 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@c3d6e01, service: null - read() returned: -1
+2025-12-19 06:09:49.377 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3a9ece76, service: null - read() returned: -1
+2025-12-19 06:10:49.375 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@35377636, service: null - read() returned: -1
+2025-12-19 06:10:49.376 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@13ea0a5b, service: null - read() returned: -1
+2025-12-19 06:11:49.378 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@25ff3ffd, service: null - read() returned: -1
+2025-12-19 06:11:49.379 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@65d9c9f7, service: null - read() returned: -1
+2025-12-19 06:12:49.385 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@29b14aca, service: null - read() returned: -1
+2025-12-19 06:12:49.386 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@312043f4, service: null - read() returned: -1
+2025-12-19 06:13:49.387 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@b8a313f, service: null - read() returned: -1
+2025-12-19 06:13:49.388 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4fd5f84c, service: null - read() returned: -1
+2025-12-19 06:14:49.389 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4b53417e, service: null - read() returned: -1
+2025-12-19 06:14:49.390 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1e9674e7, service: null - read() returned: -1
+2025-12-19 06:15:49.391 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@a9d9370, service: null - read() returned: -1
+2025-12-19 06:15:49.394 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@56b6aa0e, service: null - read() returned: -1
+2025-12-19 06:16:49.393 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@48342335, service: null - read() returned: -1
+2025-12-19 06:16:49.394 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6f0ae51, service: null - read() returned: -1
+2025-12-19 06:17:49.397 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@607302c8, service: null - read() returned: -1
+2025-12-19 06:17:49.401 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2a3ffdfb, service: null - read() returned: -1
+2025-12-19 06:18:49.398 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3d8ba77f, service: null - read() returned: -1
+2025-12-19 06:18:49.400 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@680e4510, service: null - read() returned: -1
+2025-12-19 06:19:49.407 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@79a00bbb, service: null - read() returned: -1
+2025-12-19 06:19:49.410 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@34c1b44, service: null - read() returned: -1
+2025-12-19 06:20:49.419 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@c8acf64, service: null - read() returned: -1
+2025-12-19 06:20:49.422 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@714cdfe1, service: null - read() returned: -1
+2025-12-19 06:21:49.423 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2996358e, service: null - read() returned: -1
+2025-12-19 06:21:49.426 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@67d44df5, service: null - read() returned: -1
+2025-12-19 06:22:49.429 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@657a82a8, service: null - read() returned: -1
+2025-12-19 06:22:49.433 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@513b439d, service: null - read() returned: -1
+2025-12-19 06:23:49.436 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5a918543, service: null - read() returned: -1
+2025-12-19 06:23:49.438 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6dbc04c7, service: null - read() returned: -1
+2025-12-19 06:24:49.441 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@29a6e0a2, service: null - read() returned: -1
+2025-12-19 06:24:49.444 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@46e2772c, service: null - read() returned: -1
+2025-12-19 06:25:49.450 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@797946ae, service: null - read() returned: -1
+2025-12-19 06:25:49.452 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@49a23686, service: null - read() returned: -1
+2025-12-19 06:26:49.465 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3d96f1da, service: null - read() returned: -1
+2025-12-19 06:26:49.468 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1a423238, service: null - read() returned: -1
+2025-12-19 06:27:49.459 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@52af4c61, service: null - read() returned: -1
+2025-12-19 06:27:49.461 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7a0fd0df, service: null - read() returned: -1
+2025-12-19 06:28:49.462 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6191910e, service: null - read() returned: -1
+2025-12-19 06:28:49.465 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2b7c009d, service: null - read() returned: -1
+2025-12-19 06:29:49.469 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@271ca9fd, service: null - read() returned: -1
+2025-12-19 06:29:49.473 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4ed8fcd6, service: null - read() returned: -1
+2025-12-19 06:30:49.475 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@46b6511, service: null - read() returned: -1
+2025-12-19 06:30:49.477 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@53898bc3, service: null - read() returned: -1
+2025-12-19 06:31:49.479 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1981d910, service: null - read() returned: -1
+2025-12-19 06:31:49.480 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2bca247c, service: null - read() returned: -1
+2025-12-19 06:32:49.485 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@36cdf125, service: null - read() returned: -1
+2025-12-19 06:32:49.486 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4cdeda44, service: null - read() returned: -1
+2025-12-19 06:33:49.489 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2b635b94, service: null - read() returned: -1
+2025-12-19 06:33:49.491 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@48483bf5, service: null - read() returned: -1
+2025-12-19 06:34:49.497 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2e1bd492, service: null - read() returned: -1
+2025-12-19 06:34:49.503 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2367458f, service: null - read() returned: -1
+2025-12-19 06:35:49.499 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6016ceda, service: null - read() returned: -1
+2025-12-19 06:35:49.505 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@19788c2d, service: null - read() returned: -1
+2025-12-19 06:36:49.504 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@16760746, service: null - read() returned: -1
+2025-12-19 06:36:49.510 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1c9ba4da, service: null - read() returned: -1
+2025-12-19 06:37:49.514 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@79fe3af1, service: null - read() returned: -1
+2025-12-19 06:37:49.516 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@36fa31b, service: null - read() returned: -1
+2025-12-19 06:38:49.516 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@76f43a57, service: null - read() returned: -1
+2025-12-19 06:38:49.520 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@51207331, service: null - read() returned: -1
+2025-12-19 06:39:49.520 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5521300a, service: null - read() returned: -1
+2025-12-19 06:39:49.523 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6352583d, service: null - read() returned: -1
+2025-12-19 06:40:49.522 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@39dd41b0, service: null - read() returned: -1
+2025-12-19 06:40:49.525 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3199bec5, service: null - read() returned: -1
+2025-12-19 06:41:49.530 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3b89c12, service: null - read() returned: -1
+2025-12-19 06:41:49.533 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@63e68a32, service: null - read() returned: -1
+2025-12-19 06:42:49.535 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2875e86e, service: null - read() returned: -1
+2025-12-19 06:42:49.539 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4bd02ad9, service: null - read() returned: -1
+2025-12-19 06:43:49.542 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@763dbca0, service: null - read() returned: -1
+2025-12-19 06:43:49.545 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@247a6451, service: null - read() returned: -1
+2025-12-19 06:44:49.533 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2e47c9b1, service: null - read() returned: -1
+2025-12-19 06:44:49.534 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@76dd00d, service: null - read() returned: -1
+2025-12-19 06:45:49.534 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@64cfabdf, service: null - read() returned: -1
+2025-12-19 06:45:49.536 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@d4be2f3, service: null - read() returned: -1
+2025-12-19 06:46:49.543 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4f5bdab6, service: null - read() returned: -1
+2025-12-19 06:46:49.546 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4dd2d92, service: null - read() returned: -1
+2025-12-19 06:47:49.550 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3f395b3d, service: null - read() returned: -1
+2025-12-19 06:47:49.553 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@52e550f5, service: null - read() returned: -1
+2025-12-19 06:48:49.555 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3c522861, service: null - read() returned: -1
+2025-12-19 06:48:49.556 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@315dff40, service: null - read() returned: -1
+2025-12-19 06:49:49.557 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3dc717e5, service: null - read() returned: -1
+2025-12-19 06:49:49.559 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@11e82131, service: null - read() returned: -1
+2025-12-19 06:51:11.785 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5d02dd9e, service: null - read() returned: -1
+2025-12-19 06:51:11.802 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@49658f60, service: null - read() returned: -1
+2025-12-19 06:52:11.790 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2691645b, service: null - read() returned: -1
+2025-12-19 06:52:11.805 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7c27445b, service: null - read() returned: -1
+2025-12-19 06:53:11.795 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1997eebd, service: null - read() returned: -1
+2025-12-19 06:53:11.809 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@20432eb9, service: null - read() returned: -1
+2025-12-19 06:54:11.799 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7dcb4d9f, service: null - read() returned: -1
+2025-12-19 06:54:11.811 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@27fa8752, service: null - read() returned: -1
+2025-12-19 06:55:11.807 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@26410670, service: null - read() returned: -1
+2025-12-19 06:55:11.815 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6115d826, service: null - read() returned: -1
+2025-12-19 06:58:18.464 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@46224b9b, service: null - read() returned: -1
+2025-12-19 06:58:18.470 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2bd4090a, service: null - read() returned: -1
+2025-12-19 06:59:18.475 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@620e387c, service: null - read() returned: -1
+2025-12-19 06:59:18.476 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7401aa90, service: null - read() returned: -1
+2025-12-19 07:00:18.486 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3bad3665, service: null - read() returned: -1
+2025-12-19 07:00:18.488 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@42014eaa, service: null - read() returned: -1
+2025-12-19 07:01:18.500 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@21f54cd5, service: null - read() returned: -1
+2025-12-19 07:01:18.502 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3b052c53, service: null - read() returned: -1
+2025-12-19 07:02:18.504 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2bddedd5, service: null - read() returned: -1
+2025-12-19 07:02:18.505 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@39282b49, service: null - read() returned: -1
+2025-12-19 07:03:18.511 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@71586db8, service: null - read() returned: -1
+2025-12-19 07:03:18.515 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4da5829c, service: null - read() returned: -1
+2025-12-19 07:04:18.521 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@43bd1ea3, service: null - read() returned: -1
+2025-12-19 07:04:18.523 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@226dc52a, service: null - read() returned: -1
+2025-12-19 07:05:18.527 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2c1c6e71, service: null - read() returned: -1
+2025-12-19 07:05:18.532 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4bf7e417, service: null - read() returned: -1
+2025-12-19 07:06:18.534 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2f4cdc32, service: null - read() returned: -1
+2025-12-19 07:06:18.536 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@25c49076, service: null - read() returned: -1
+2025-12-19 07:07:18.540 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6e0349fd, service: null - read() returned: -1
+2025-12-19 07:07:18.542 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6c35593, service: null - read() returned: -1
+2025-12-19 07:08:18.549 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@46df6814, service: null - read() returned: -1
+2025-12-19 07:08:18.550 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5aacc291, service: null - read() returned: -1
+2025-12-19 07:09:18.554 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@54739e76, service: null - read() returned: -1
+2025-12-19 07:09:18.556 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@68f77623, service: null - read() returned: -1
+2025-12-19 07:10:18.556 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@54e13590, service: null - read() returned: -1
+2025-12-19 07:10:18.559 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4f3cba9c, service: null - read() returned: -1
+2025-12-19 07:11:18.563 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3d6563a8, service: null - read() returned: -1
+2025-12-19 07:11:18.565 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4754c905, service: null - read() returned: -1
+2025-12-19 07:12:18.566 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1d3fcd82, service: null - read() returned: -1
+2025-12-19 07:12:18.568 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2239f036, service: null - read() returned: -1
+2025-12-19 07:38:36.220 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@46648bf8, service: null - read() returned: -1
+2025-12-19 07:38:36.222 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@48bb4310, service: null - read() returned: -1
+2025-12-19 07:39:36.223 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2f3b16fc, service: null - read() returned: -1
+2025-12-19 07:39:36.225 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6dca0b9b, service: null - read() returned: -1
+2025-12-19 07:40:36.229 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@44f2104d, service: null - read() returned: -1
+2025-12-19 07:40:36.232 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5d23c371, service: null - read() returned: -1
+2025-12-19 07:41:36.239 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@556aed6c, service: null - read() returned: -1
+2025-12-19 07:41:36.240 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@161194fb, service: null - read() returned: -1
+2025-12-19 07:42:36.240 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@60a65794, service: null - read() returned: -1
+2025-12-19 07:42:36.241 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7a8aa137, service: null - read() returned: -1
+2025-12-19 07:43:36.247 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@54e16358, service: null - read() returned: -1
+2025-12-19 07:43:36.249 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@29851e5c, service: null - read() returned: -1
+2025-12-19 07:44:36.250 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6318db93, service: null - read() returned: -1
+2025-12-19 07:44:36.252 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@28286b72, service: null - read() returned: -1
+2025-12-19 07:45:36.254 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@550a1029, service: null - read() returned: -1
+2025-12-19 07:45:36.257 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@60addd33, service: null - read() returned: -1
+2025-12-19 07:46:36.259 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@492b961e, service: null - read() returned: -1
+2025-12-19 07:46:36.261 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@66d3a426, service: null - read() returned: -1
+2025-12-19 07:48:37.743 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@15798375, service: null - read() returned: -1
+2025-12-19 07:48:37.744 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4b8e1a0b, service: null - read() returned: -1
+2025-12-19 07:49:37.749 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@290925c7, service: null - read() returned: -1
+2025-12-19 07:49:37.754 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1935d86e, service: null - read() returned: -1
+2025-12-19 07:50:37.759 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3e402a4a, service: null - read() returned: -1
+2025-12-19 07:50:37.760 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@9817344, service: null - read() returned: -1
+2025-12-19 07:51:37.762 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@503392e3, service: null - read() returned: -1
+2025-12-19 07:51:37.764 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6d07b521, service: null - read() returned: -1
+2025-12-19 07:52:37.767 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@40058b54, service: null - read() returned: -1
+2025-12-19 07:52:37.770 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@8fb4b45, service: null - read() returned: -1
+2025-12-19 07:53:37.769 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5615f8b, service: null - read() returned: -1
+2025-12-19 07:53:37.771 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@25fb93b2, service: null - read() returned: -1
+2025-12-19 07:54:37.780 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@52f5a4a5, service: null - read() returned: -1
+2025-12-19 07:54:37.781 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1e2c43be, service: null - read() returned: -1
+2025-12-19 07:55:37.785 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@52c450a, service: null - read() returned: -1
+2025-12-19 07:55:37.788 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@77b5ecf, service: null - read() returned: -1
+2025-12-19 07:56:37.797 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2ca7df7, service: null - read() returned: -1
+2025-12-19 07:56:37.798 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@12fc97e5, service: null - read() returned: -1
+2025-12-19 07:57:37.804 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6d8dd1c2, service: null - read() returned: -1
+2025-12-19 07:57:37.807 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3595d659, service: null - read() returned: -1
+2025-12-19 07:58:37.810 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@432a0e4c, service: null - read() returned: -1
+2025-12-19 07:58:37.811 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1ae796a8, service: null - read() returned: -1
+2025-12-19 07:59:37.813 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1fb23e17, service: null - read() returned: -1
+2025-12-19 07:59:37.815 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@65bf0b3d, service: null - read() returned: -1
+2025-12-19 08:00:37.814 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2f033a51, service: null - read() returned: -1
+2025-12-19 08:00:37.815 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2d95991f, service: null - read() returned: -1
+2025-12-19 08:01:37.816 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@45345b6f, service: null - read() returned: -1
+2025-12-19 08:01:37.817 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@94ad28, service: null - read() returned: -1
+2025-12-19 08:02:37.839 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@d921ed5, service: null - read() returned: -1
+2025-12-19 08:02:37.840 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6d4c2ca6, service: null - read() returned: -1
+2025-12-19 08:03:37.842 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@25bb89da, service: null - read() returned: -1
+2025-12-19 08:03:37.844 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@291ea8d7, service: null - read() returned: -1
+2025-12-19 08:10:05.219 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7a765d20, service: null - read() returned: -1
+2025-12-19 08:10:05.220 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5f7eb655, service: null - read() returned: -1
+2025-12-19 08:11:05.246 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@32aa077d, service: null - read() returned: -1
+2025-12-19 08:11:05.247 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4c15d4c6, service: null - read() returned: -1
+2025-12-19 08:12:05.249 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3adda52e, service: null - read() returned: -1
+2025-12-19 08:12:05.251 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@26535e96, service: null - read() returned: -1
+2025-12-19 08:13:05.255 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5ff5c99c, service: null - read() returned: -1
+2025-12-19 08:13:05.258 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@37b1a0ea, service: null - read() returned: -1
+2025-12-19 08:14:05.262 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@795bbb47, service: null - read() returned: -1
+2025-12-19 08:14:05.264 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1fe64bec, service: null - read() returned: -1
+2025-12-19 08:15:05.266 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2a163558, service: null - read() returned: -1
+2025-12-19 08:15:05.269 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7257d82f, service: null - read() returned: -1
+2025-12-19 08:16:05.273 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7ee6e4dc, service: null - read() returned: -1
+2025-12-19 08:16:05.276 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7732d033, service: null - read() returned: -1
+2025-12-19 08:17:05.281 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@561cbf4f, service: null - read() returned: -1
+2025-12-19 08:17:05.282 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4b54c41f, service: null - read() returned: -1
+2025-12-19 08:27:54.355 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4c6375ae, service: null - read() returned: -1
+2025-12-19 08:27:54.358 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3a3673da, service: null - read() returned: -1
+2025-12-19 08:28:54.360 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@200a124e, service: null - read() returned: -1
+2025-12-19 08:28:54.367 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7a26aab, service: null - read() returned: -1
+2025-12-19 08:29:54.370 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1e88c947, service: null - read() returned: -1
+2025-12-19 08:29:54.374 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1ffd7d8e, service: null - read() returned: -1
+2025-12-19 08:30:54.375 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@289dd0e6, service: null - read() returned: -1
+2025-12-19 08:30:54.377 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@22531f4d, service: null - read() returned: -1
+2025-12-19 08:31:54.377 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2b2d6c02, service: null - read() returned: -1
+2025-12-19 08:31:54.379 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@772619ba, service: null - read() returned: -1
+2025-12-19 08:32:54.380 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5666530c, service: null - read() returned: -1
+2025-12-19 08:32:54.382 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@726d5743, service: null - read() returned: -1
+2025-12-19 08:33:54.387 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5bd4657f, service: null - read() returned: -1
+2025-12-19 08:33:54.391 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7df81494, service: null - read() returned: -1
+2025-12-19 10:01:38.026 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4f86abf7, service: null - read() returned: -1
+2025-12-19 10:01:38.029 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2b881ea4, service: null - read() returned: -1
+2025-12-19 10:54:18.568 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@686ccafa, service: null - read() returned: -1
+2025-12-19 10:54:18.570 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5ae875b7, service: null - read() returned: -1
+2025-12-19 10:55:18.573 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3e6abe7c, service: null - read() returned: -1
+2025-12-19 10:55:18.575 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@670870b3, service: null - read() returned: -1
+2025-12-19 10:56:18.581 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@40259cbc, service: null - read() returned: -1
+2025-12-19 10:56:18.584 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3d3961bd, service: null - read() returned: -1
+2025-12-19 10:57:18.586 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@40249151, service: null - read() returned: -1
+2025-12-19 10:57:18.589 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2f51b620, service: null - read() returned: -1
+2025-12-19 10:58:18.590 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@263eec74, service: null - read() returned: -1
+2025-12-19 10:58:18.593 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@452f804e, service: null - read() returned: -1
+2025-12-19 10:59:18.597 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@74ac21d6, service: null - read() returned: -1
+2025-12-19 10:59:18.603 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@448d3399, service: null - read() returned: -1
+2025-12-19 11:00:18.612 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@473ba802, service: null - read() returned: -1
+2025-12-19 11:00:18.614 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6a874a87, service: null - read() returned: -1
+2025-12-19 11:01:18.614 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@46e62f25, service: null - read() returned: -1
+2025-12-19 11:01:18.616 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@c045e36, service: null - read() returned: -1
+2025-12-19 11:04:34.413 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@70dc64e6, service: null - read() returned: -1
+2025-12-19 11:04:34.418 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3d413ae9, service: null - read() returned: -1
+2025-12-19 11:05:34.416 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@e5cb81b, service: null - read() returned: -1
+2025-12-19 11:05:34.417 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@783c7729, service: null - read() returned: -1
+2025-12-19 11:06:34.420 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@2e62e404, service: null - read() returned: -1
+2025-12-19 11:06:34.422 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@d0b14af, service: null - read() returned: -1
+2025-12-19 11:07:34.423 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@590e6475, service: null - read() returned: -1
+2025-12-19 11:07:34.426 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@37383350, service: null - read() returned: -1
+2025-12-19 11:08:34.428 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@52707d0d, service: null - read() returned: -1
+2025-12-19 11:08:34.430 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5974ebaa, service: null - read() returned: -1
+2025-12-19 11:09:34.431 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4c9357de, service: null - read() returned: -1
+2025-12-19 11:09:34.433 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1ab10a7b, service: null - read() returned: -1
+2025-12-19 11:10:34.433 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@79039a5, service: null - read() returned: -1
+2025-12-19 11:10:34.435 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@45f166dc, service: null - read() returned: -1
+2025-12-19 11:11:34.435 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4f02bebd, service: null - read() returned: -1
+2025-12-19 11:11:34.436 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5cb3e5b1, service: null - read() returned: -1
+2025-12-19 11:12:34.436 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@98bfc3, service: null - read() returned: -1
+2025-12-19 11:12:34.439 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@40d9d8c, service: null - read() returned: -1
+2025-12-19 11:13:34.438 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@33c2b9ae, service: null - read() returned: -1
+2025-12-19 11:13:34.441 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@1feaee57, service: null - read() returned: -1
+2025-12-19 11:14:34.442 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@446f30d5, service: null - read() returned: -1
+2025-12-19 11:14:34.444 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6452daaf, service: null - read() returned: -1
+2025-12-19 11:15:34.445 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@cc29a9a, service: null - read() returned: -1
+2025-12-19 11:15:34.447 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@4200d2de, service: null - read() returned: -1
+2025-12-19 11:16:34.446 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@5cf1a2e1, service: null - read() returned: -1
+2025-12-19 11:16:34.448 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7c7e7b5, service: null - read() returned: -1
+2025-12-19 11:17:34.452 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@6d81f038, service: null - read() returned: -1
+2025-12-19 11:17:34.453 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@3ce617de, service: null - read() returned: -1
+2025-12-19 11:18:34.457 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@57644c8c, service: null - read() returned: -1
+2025-12-19 11:18:34.459 UTC WARNING [starrocks-fe-2_9010_1766069290767] Premature EOF on channel: com.sleepycat.je.rep.utilint.net.SimpleDataChannel@7a206415, service: null - read() returned: -1

@@ -1,0 +1,89 @@
+version: "3.9"
+
+# [공통 설정] command는 여기서 뺐습니다.
+x-fe-common: &fe-common
+  image: starrocks/fe-ubuntu:latest
+  restart: always
+  environment:
+    - HOST_TYPE=FQDN
+    - TZ=Asia/Seoul
+    # 팔로워는 entrypoint를 쓰므로 이 환경변수가 필수입니다.
+    - STARROCKS_PRIORITY_NETWORKS=10.100.0.0/24
+    - JAVA_OPTS=-Xmx2g -Xms2g
+
+
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "200m"
+      max-file: "5"
+
+services:
+  # ==========================================
+  # FE Node 0 (Leader) - 수동 스크립트로 즉시 실행
+  # ==========================================
+  starrocks-fe-0:
+    <<: *fe-common
+    hostname: starrocks-fe-0
+    container_name: starrocks-fe-0
+    networks:
+      default:
+        ipv4_address: 10.100.0.21
+    # [핵심] 리더는 설정 파일 직접 수정 후 바로 실행 (대기 없음)
+    command:
+      - /bin/bash
+      - -c
+      - |
+        /opt/starrocks/fe_entrypoint.sh starrocks-fe-0
+    volumes:
+      - ./data/fe-0/meta:/opt/starrocks/fe/meta
+      - ./data/fe-0/log:/opt/starrocks/fe/log
+
+  # ==========================================
+  # FE Node 1 (Follower) - 엔트리포인트 사용
+  # ==========================================
+  starrocks-fe-1:
+    <<: *fe-common
+    hostname: starrocks-fe-1
+    container_name: starrocks-fe-1
+    networks:
+      default:
+        ipv4_address: 10.100.0.22
+    # [핵심] 팔로워는 리더(starrocks-fe-1)를 바라보며 엔트리포인트 실행
+    command:
+      - /bin/bash
+      - -c
+      - |
+        /opt/starrocks/fe_entrypoint.sh starrocks-fe-0
+    volumes:
+      - ./data/fe-1/meta:/opt/starrocks/fe/meta
+      - ./data/fe-1/log:/opt/starrocks/fe/log
+    depends_on:
+      - starrocks-fe-0
+
+  # ==========================================
+  # FE Node 2 (Follower) - 엔트리포인트 사용
+  # ==========================================
+  starrocks-fe-2:
+    <<: *fe-common
+    hostname: starrocks-fe-2
+    container_name: starrocks-fe-2
+    networks:
+      default:
+        ipv4_address: 10.100.0.23
+    # [핵심] 팔로워는 리더(starrocks-fe-1)를 바라보며 엔트리포인트 실행
+    command:
+      - /bin/bash
+      - -c
+      - |
+        /opt/starrocks/fe_entrypoint.sh starrocks-fe-0
+    volumes:
+      - ./data/fe-2/meta:/opt/starrocks/fe/meta
+      - ./data/fe-2/log:/opt/starrocks/fe/log
+    depends_on:
+      - starrocks-fe-0
+
+networks:
+  default:
+    name: dataplatform-net
+    external: true

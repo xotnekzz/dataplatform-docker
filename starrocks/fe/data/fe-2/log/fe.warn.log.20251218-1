@@ -1,0 +1,548 @@
+2025-12-18 23:48:12.119+09:00 WARN (UNKNOWN starrocks-fe-2_9010_1766069290767(-1)|1) [StateChangeExecutor.notifyNewFETypeTransfer():63] notify new FE type transfer: UNKNOWN
+ 2025-12-18 23:48:12.124+09:00 WARN (RepNode starrocks-fe-2_9010_1766069290767(-1)|99) [StateChangeExecutor.notifyNewFETypeTransfer():63] notify new FE type transfer: FOLLOWER
+ 2025-12-18 23:48:13.248+09:00 WARN (PredicateColumnsDaemonThread|117) [PredicateColumnsMgr$DaemonThread.runAfterCatalogReady():232] system table of predicate_columns is still not ready
+ 2025-12-18 23:48:15.252+09:00 WARN (port-connectivity-checker-0|126) [PortConnectivityChecker.isPortConnectable():113] socket connection to starrocks-fe-1:0 failed, reason: Connection refused
+ 2025-12-18 23:48:15.253+09:00 WARN (PortConnectivityChecker|18) [PortConnectivityChecker.runAfterCatalogReady():90] checking for connectivity of starrocks-fe-1:0 failed, not open
+ 2025-12-18 23:49:13.253+09:00 WARN (PredicateColumnsDaemonThread|117) [PredicateColumnsMgr$DaemonThread.runAfterCatalogReady():232] system table of predicate_columns is still not ready
+ 2025-12-18 23:49:33.565+09:00 WARN (UNKNOWN starrocks-fe-2_9010_1766069290767(-1)|1) [StateChangeExecutor.notifyNewFETypeTransfer():63] notify new FE type transfer: UNKNOWN
+ 2025-12-18 23:49:33.604+09:00 WARN (RepNode starrocks-fe-2_9010_1766069290767(-1)|79) [StateChangeExecutor.notifyNewFETypeTransfer():63] notify new FE type transfer: LEADER
+ 2025-12-18 23:49:34.883+09:00 WARN (PredicateColumnsDaemonThread|119) [PredicateColumnsMgr$DaemonThread.runAfterCatalogReady():232] system table of predicate_columns is still not ready
+ 2025-12-18 23:49:34.900+09:00 WARN (PipeScheduler|54) [PipeScheduler.process():67] Successfully recover all pipes
+ 2025-12-18 23:49:34.919+09:00 WARN (heartbeat-mgr-pool-5|134) [Util.getResultForUrl():388] failed to get result from url: http://starrocks-fe-0:8030/api/bootstrap?cluster_id=*&token=*. Connection refused
+ 2025-12-18 23:49:34.919+09:00 WARN (heartbeat-mgr-pool-3|132) [Util.getResultForUrl():388] failed to get result from url: http://starrocks-fe-1:8030/api/bootstrap?cluster_id=*&token=*. Connection refused
+ 2025-12-18 23:49:34.979+09:00 WARN (heartbeat-mgr-pool-2|131) [HeartbeatMgr$BackendHeartbeatHandler.call():334] backend heartbeat got exception, addr: starrocks-be-1:9050
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-1
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:286)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:257)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-18 23:49:34.979+09:00 WARN (heartbeat-mgr-pool-0|129) [HeartbeatMgr$BackendHeartbeatHandler.call():334] backend heartbeat got exception, addr: starrocks-be-2:9050
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:286)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:257)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-18 23:49:34.977+09:00 WARN (tablet stat mgr|33) [TabletStatMgr.updateLocalTabletStat():220] task exec error. backend[10001]
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.catalog.TabletStatMgr.updateLocalTabletStat(TabletStatMgr.java:212)
+	at com.starrocks.catalog.TabletStatMgr.runAfterCatalogReady(TabletStatMgr.java:119)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:34.973+09:00 WARN (Thread-44|61) [TemporaryTableCleaner.getAliveSessions():124] listSessions return error from starrocks-fe-1:9020, skip clean temporary tables
+ org.apache.thrift.TException: java.net.ConnectException: Connection refused
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:33)
+	at com.starrocks.server.TemporaryTableCleaner.getAliveSessions(TemporaryTableCleaner.java:106)
+	at com.starrocks.server.TemporaryTableCleaner.runAfterCatalogReady(TemporaryTableCleaner.java:65)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:34.979+09:00 WARN (heartbeat-mgr-pool-1|130) [HeartbeatMgr$BackendHeartbeatHandler.call():334] backend heartbeat got exception, addr: starrocks-be-0:9050
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-0
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:286)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:257)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-18 23:49:34.976+09:00 WARN (TabletCollector|64) [TabletCollector.collect():115] collect tablets from backend 10001 failed
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.leader.TabletCollector.collect(TabletCollector.java:95)
+	at com.starrocks.leader.TabletCollector.runAfterCatalogReady(TabletCollector.java:57)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:34.991+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.UnknownHostException: starrocks-be-2
+ 2025-12-18 23:49:34.969+09:00 WARN (global_state_checkpoint_controller|104) [CheckpointController.doCheckpoint():370] call doCheckpoint failed for node: starrocks-fe-1_9010_1766069290773
+ org.apache.thrift.TException: java.net.ConnectException: Connection refused
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:48)
+	at com.starrocks.leader.CheckpointController.doCheckpoint(CheckpointController.java:352)
+	at com.starrocks.leader.CheckpointController.selectWorker(CheckpointController.java:286)
+	at com.starrocks.leader.CheckpointController.createImage(CheckpointController.java:205)
+	at com.starrocks.leader.CheckpointController.runCheckpointControllerWithIds(CheckpointController.java:164)
+	at com.starrocks.leader.CheckpointController.runCheckpointController(CheckpointController.java:137)
+	at com.starrocks.leader.CheckpointController.runAfterCatalogReady(CheckpointController.java:129)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:34.991+09:00 WARN (tablet stat mgr|33) [TabletStatMgr.updateLocalTabletStat():220] task exec error. backend[10002]
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-0
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.catalog.TabletStatMgr.updateLocalTabletStat(TabletStatMgr.java:212)
+	at com.starrocks.catalog.TabletStatMgr.runAfterCatalogReady(TabletStatMgr.java:119)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:34.998+09:00 WARN (tablet stat mgr|33) [TabletStatMgr.updateLocalTabletStat():220] task exec error. backend[10003]
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-1
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.catalog.TabletStatMgr.updateLocalTabletStat(TabletStatMgr.java:212)
+	at com.starrocks.catalog.TabletStatMgr.runAfterCatalogReady(TabletStatMgr.java:119)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:34.999+09:00 WARN (global_state_checkpoint_controller|104) [CheckpointController.doCheckpoint():370] call doCheckpoint failed for node: starrocks-fe-0_9010_1766069283477
+ org.apache.thrift.TException: java.net.ConnectException: Connection refused
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:48)
+	at com.starrocks.leader.CheckpointController.doCheckpoint(CheckpointController.java:352)
+	at com.starrocks.leader.CheckpointController.selectWorker(CheckpointController.java:286)
+	at com.starrocks.leader.CheckpointController.createImage(CheckpointController.java:205)
+	at com.starrocks.leader.CheckpointController.runCheckpointControllerWithIds(CheckpointController.java:164)
+	at com.starrocks.leader.CheckpointController.runCheckpointController(CheckpointController.java:137)
+	at com.starrocks.leader.CheckpointController.runAfterCatalogReady(CheckpointController.java:129)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:34.992+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.UnknownHostException: starrocks-be-0
+ 2025-12-18 23:49:35.003+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.UnknownHostException: starrocks-be-1
+ 2025-12-18 23:49:35.004+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: FRONTEND, status: BAD, msg: Connection refused, name: starrocks-fe-1_9010_1766069290773, queryPort: 0, rpcPort: 0, replayedJournalId: 0, feStartTime: \N, feVersion: null
+ 2025-12-18 23:49:35.015+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: FRONTEND, status: BAD, msg: Connection refused, name: starrocks-fe-0_9010_1766069283477, queryPort: 0, rpcPort: 0, replayedJournalId: 0, feStartTime: \N, feVersion: null
+ 2025-12-18 23:49:35.092+09:00 WARN (TabletCollector|64) [TabletCollector.collect():115] collect tablets from backend 10003 failed
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-1
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.leader.TabletCollector.collect(TabletCollector.java:95)
+	at com.starrocks.leader.TabletCollector.runAfterCatalogReady(TabletCollector.java:57)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:35.195+09:00 WARN (TabletCollector|64) [TabletCollector.collect():115] collect tablets from backend 10002 failed
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-0
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.leader.TabletCollector.collect(TabletCollector.java:95)
+	at com.starrocks.leader.TabletCollector.runAfterCatalogReady(TabletCollector.java:57)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+2025-12-18 23:49:35.406+09:00 ERROR (TableKeeper|101) [SimpleExecutor.executeDDL():129] RepoExecutorexecute DDL error: CREATE TABLE IF NOT EXISTS _statistics_.task_run_history (task_id bigint NOT NULL, task_run_id string NOT NULL, create_time datetime NOT NULL, task_name string NOT NULL, task_state STRING NOT NULL, finish_time datetime NOT NULL, expire_time datetime NOT NULL, history_content_json JSON NOT NULL)PRIMARY KEY (task_id, task_run_id, create_time) PARTITION BY date_trunc('DAY', create_time) DISTRIBUTED BY HASH(task_id) BUCKETS 8 PROPERTIES( 'replication_num' = '1', 'partition_live_number' = '7')
+ com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:199)
+	at com.starrocks.qe.SimpleExecutor.executeDDL(SimpleExecutor.java:125)
+	at com.starrocks.scheduler.history.TableKeeper.createTable(TableKeeper.java:96)
+	at com.starrocks.scheduler.history.TableKeeper.run(TableKeeper.java:68)
+	at com.starrocks.scheduler.history.TableKeeper$TableKeeperDaemon.runAfterCatalogReady(TableKeeper.java:222)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:340)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasksAndWaitForFinished(TabletTaskExecutor.java:310)
+	at com.starrocks.task.TabletTaskExecutor.buildPartitionsSequentially(TabletTaskExecutor.java:113)
+	at com.starrocks.server.LocalMetastore.buildPartitions(LocalMetastore.java:1864)
+	at com.starrocks.server.OlapTableFactory.createTable(OlapTableFactory.java:819)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:852)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:794)
+	at com.starrocks.server.MetadataMgr.createTable(MetadataMgr.java:302)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.lambda$visitCreateTableStatement$4(DDLStmtExecutor.java:301)
+	at com.starrocks.common.ErrorReport.wrapWithRuntimeException(ErrorReport.java:118)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:300)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:206)
+	at com.starrocks.sql.ast.CreateTableStmt.accept(CreateTableStmt.java:344)
+	at com.starrocks.sql.ast.AstVisitor.visit(AstVisitor.java:106)
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:191)
+	... 6 more
+Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:334)
+	... 20 more
+Caused by: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:366)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:33)
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:356)
+	... 4 more
+2025-12-18 23:49:35.408+09:00 ERROR (TableKeeper|101) [TableKeeper.run():76] error happens in Keeper: com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+ java.lang.RuntimeException: com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.qe.SimpleExecutor.executeDDL(SimpleExecutor.java:130)
+	at com.starrocks.scheduler.history.TableKeeper.createTable(TableKeeper.java:96)
+	at com.starrocks.scheduler.history.TableKeeper.run(TableKeeper.java:68)
+	at com.starrocks.scheduler.history.TableKeeper$TableKeeperDaemon.runAfterCatalogReady(TableKeeper.java:222)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+Caused by: com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:199)
+	at com.starrocks.qe.SimpleExecutor.executeDDL(SimpleExecutor.java:125)
+	... 5 more
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:340)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasksAndWaitForFinished(TabletTaskExecutor.java:310)
+	at com.starrocks.task.TabletTaskExecutor.buildPartitionsSequentially(TabletTaskExecutor.java:113)
+	at com.starrocks.server.LocalMetastore.buildPartitions(LocalMetastore.java:1864)
+	at com.starrocks.server.OlapTableFactory.createTable(OlapTableFactory.java:819)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:852)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:794)
+	at com.starrocks.server.MetadataMgr.createTable(MetadataMgr.java:302)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.lambda$visitCreateTableStatement$4(DDLStmtExecutor.java:301)
+	at com.starrocks.common.ErrorReport.wrapWithRuntimeException(ErrorReport.java:118)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:300)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:206)
+	at com.starrocks.sql.ast.CreateTableStmt.accept(CreateTableStmt.java:344)
+	at com.starrocks.sql.ast.AstVisitor.visit(AstVisitor.java:106)
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:191)
+	... 6 more
+Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:334)
+	... 20 more
+Caused by: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:366)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:33)
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:356)
+	... 4 more
+2025-12-18 23:49:35.420+09:00 ERROR (TableKeeper|101) [SimpleExecutor.executeDDL():129] RepoExecutorexecute DDL error: CREATE TABLE IF NOT EXISTS loads_history (id bigint, label varchar(2048), profile_id varchar(2048), db_name varchar(2048), table_name varchar(2048), user varchar(2048), warehouse varchar(2048), state varchar(2048), progress varchar(2048), type varchar(2048), priority varchar(2048), scan_rows bigint, scan_bytes bigint, filtered_rows bigint, unselected_rows bigint, sink_rows bigint, runtime_details json, create_time datetime, load_start_time datetime, load_commit_time datetime, load_finish_time datetime not null, properties json, error_msg varchar(2048), tracking_sql varchar(2048), rejected_record_path varchar(2048), job_id bigint ) PARTITION BY date_trunc('DAY', load_finish_time) DISTRIBUTED BY HASH(label) BUCKETS 3 PROPERTIES( 'replication_num' = '1', 'partition_live_number' = '30')
+ com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:199)
+	at com.starrocks.qe.SimpleExecutor.executeDDL(SimpleExecutor.java:125)
+	at com.starrocks.scheduler.history.TableKeeper.createTable(TableKeeper.java:96)
+	at com.starrocks.scheduler.history.TableKeeper.run(TableKeeper.java:68)
+	at com.starrocks.scheduler.history.TableKeeper$TableKeeperDaemon.runAfterCatalogReady(TableKeeper.java:222)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:340)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasksAndWaitForFinished(TabletTaskExecutor.java:310)
+	at com.starrocks.task.TabletTaskExecutor.buildPartitionsSequentially(TabletTaskExecutor.java:113)
+	at com.starrocks.server.LocalMetastore.buildPartitions(LocalMetastore.java:1864)
+	at com.starrocks.server.OlapTableFactory.createTable(OlapTableFactory.java:819)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:852)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:794)
+	at com.starrocks.server.MetadataMgr.createTable(MetadataMgr.java:302)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.lambda$visitCreateTableStatement$4(DDLStmtExecutor.java:301)
+	at com.starrocks.common.ErrorReport.wrapWithRuntimeException(ErrorReport.java:118)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:300)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:206)
+	at com.starrocks.sql.ast.CreateTableStmt.accept(CreateTableStmt.java:344)
+	at com.starrocks.sql.ast.AstVisitor.visit(AstVisitor.java:106)
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:191)
+	... 6 more
+Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:334)
+	... 20 more
+Caused by: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:366)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:33)
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:356)
+	... 4 more
+2025-12-18 23:49:35.422+09:00 ERROR (TableKeeper|101) [TableKeeper.run():76] error happens in Keeper: com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+ java.lang.RuntimeException: com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.qe.SimpleExecutor.executeDDL(SimpleExecutor.java:130)
+	at com.starrocks.scheduler.history.TableKeeper.createTable(TableKeeper.java:96)
+	at com.starrocks.scheduler.history.TableKeeper.run(TableKeeper.java:68)
+	at com.starrocks.scheduler.history.TableKeeper$TableKeeperDaemon.runAfterCatalogReady(TableKeeper.java:222)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+Caused by: com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:199)
+	at com.starrocks.qe.SimpleExecutor.executeDDL(SimpleExecutor.java:125)
+	... 5 more
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:340)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasksAndWaitForFinished(TabletTaskExecutor.java:310)
+	at com.starrocks.task.TabletTaskExecutor.buildPartitionsSequentially(TabletTaskExecutor.java:113)
+	at com.starrocks.server.LocalMetastore.buildPartitions(LocalMetastore.java:1864)
+	at com.starrocks.server.OlapTableFactory.createTable(OlapTableFactory.java:819)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:852)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:794)
+	at com.starrocks.server.MetadataMgr.createTable(MetadataMgr.java:302)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.lambda$visitCreateTableStatement$4(DDLStmtExecutor.java:301)
+	at com.starrocks.common.ErrorReport.wrapWithRuntimeException(ErrorReport.java:118)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:300)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:206)
+	at com.starrocks.sql.ast.CreateTableStmt.accept(CreateTableStmt.java:344)
+	at com.starrocks.sql.ast.AstVisitor.visit(AstVisitor.java:106)
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:191)
+	... 6 more
+Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:334)
+	... 20 more
+Caused by: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:366)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:33)
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:356)
+	... 4 more
+2025-12-18 23:49:35.430+09:00 ERROR (TableKeeper|101) [SimpleExecutor.executeDDL():129] RepoExecutorexecute DDL error: CREATE TABLE predicate_columns( fe_id STRING NOT NULL,db_id BIGINT NOT NULL,table_id BIGINT NOT NULL,column_id BIGINT NOT NULL,usage STRING NOT NULL,last_used DATETIME NOT NULL,created DATETIME DEFAULT CURRENT_TIMESTAMP) PRIMARY KEY(fe_id, db_id, table_id, column_id) DISTRIBUTED BY HASH(fe_id, db_id, table_id, column_id) BUCKETS 8
+PROPERTIES('replication_num'='1')
+ com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:199)
+	at com.starrocks.qe.SimpleExecutor.executeDDL(SimpleExecutor.java:125)
+	at com.starrocks.scheduler.history.TableKeeper.createTable(TableKeeper.java:96)
+	at com.starrocks.scheduler.history.TableKeeper.run(TableKeeper.java:68)
+	at com.starrocks.scheduler.history.TableKeeper$TableKeeperDaemon.runAfterCatalogReady(TableKeeper.java:222)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:340)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasksAndWaitForFinished(TabletTaskExecutor.java:310)
+	at com.starrocks.task.TabletTaskExecutor.buildPartitionsSequentially(TabletTaskExecutor.java:113)
+	at com.starrocks.server.LocalMetastore.buildPartitions(LocalMetastore.java:1864)
+	at com.starrocks.server.OlapTableFactory.createTable(OlapTableFactory.java:778)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:852)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:794)
+	at com.starrocks.server.MetadataMgr.createTable(MetadataMgr.java:302)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.lambda$visitCreateTableStatement$4(DDLStmtExecutor.java:301)
+	at com.starrocks.common.ErrorReport.wrapWithRuntimeException(ErrorReport.java:118)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:300)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:206)
+	at com.starrocks.sql.ast.CreateTableStmt.accept(CreateTableStmt.java:344)
+	at com.starrocks.sql.ast.AstVisitor.visit(AstVisitor.java:106)
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:191)
+	... 6 more
+Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:334)
+	... 20 more
+Caused by: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:366)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:33)
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:356)
+	... 4 more
+2025-12-18 23:49:35.432+09:00 ERROR (TableKeeper|101) [TableKeeper.run():76] error happens in Keeper: com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+ java.lang.RuntimeException: com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.qe.SimpleExecutor.executeDDL(SimpleExecutor.java:130)
+	at com.starrocks.scheduler.history.TableKeeper.createTable(TableKeeper.java:96)
+	at com.starrocks.scheduler.history.TableKeeper.run(TableKeeper.java:68)
+	at com.starrocks.scheduler.history.TableKeeper$TableKeeperDaemon.runAfterCatalogReady(TableKeeper.java:222)
+	at com.starrocks.common.util.FrontendDaemon.runOneCycle(FrontendDaemon.java:78)
+	at com.starrocks.common.util.Daemon.run(Daemon.java:98)
+Caused by: com.starrocks.common.DdlException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:199)
+	at com.starrocks.qe.SimpleExecutor.executeDDL(SimpleExecutor.java:125)
+	... 5 more
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:340)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasksAndWaitForFinished(TabletTaskExecutor.java:310)
+	at com.starrocks.task.TabletTaskExecutor.buildPartitionsSequentially(TabletTaskExecutor.java:113)
+	at com.starrocks.server.LocalMetastore.buildPartitions(LocalMetastore.java:1864)
+	at com.starrocks.server.OlapTableFactory.createTable(OlapTableFactory.java:778)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:852)
+	at com.starrocks.server.LocalMetastore.createTable(LocalMetastore.java:794)
+	at com.starrocks.server.MetadataMgr.createTable(MetadataMgr.java:302)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.lambda$visitCreateTableStatement$4(DDLStmtExecutor.java:301)
+	at com.starrocks.common.ErrorReport.wrapWithRuntimeException(ErrorReport.java:118)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:300)
+	at com.starrocks.qe.DDLStmtExecutor$StmtExecutorVisitor.visitCreateTableStatement(DDLStmtExecutor.java:206)
+	at com.starrocks.sql.ast.CreateTableStmt.accept(CreateTableStmt.java:344)
+	at com.starrocks.sql.ast.AstVisitor.visit(AstVisitor.java:106)
+	at com.starrocks.qe.DDLStmtExecutor.execute(DDLStmtExecutor.java:191)
+	... 6 more
+Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073)
+	at com.starrocks.task.TabletTaskExecutor.sendCreateReplicaTasks(TabletTaskExecutor.java:334)
+	... 20 more
+Caused by: java.lang.RuntimeException: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:366)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:33)
+	at com.starrocks.task.TabletTaskExecutor.lambda$sendTask$5(TabletTaskExecutor.java:356)
+	... 4 more
+2025-12-18 23:49:39.863+09:00 WARN (heartbeat-mgr-pool-7|154) [HeartbeatMgr$BackendHeartbeatHandler.call():334] backend heartbeat got exception, addr: starrocks-be-0:9050
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-0
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:286)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:257)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-18 23:49:39.864+09:00 WARN (heartbeat-mgr-pool-6|153) [HeartbeatMgr$BackendHeartbeatHandler.call():334] backend heartbeat got exception, addr: starrocks-be-2:9050
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:286)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:257)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-18 23:49:39.863+09:00 WARN (heartbeat-mgr-pool-4|133) [HeartbeatMgr$BackendHeartbeatHandler.call():334] backend heartbeat got exception, addr: starrocks-be-1:9050
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-1
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:286)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:257)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-18 23:49:39.870+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.UnknownHostException: starrocks-be-2
+ 2025-12-18 23:49:39.872+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.UnknownHostException: starrocks-be-0
+ 2025-12-18 23:49:39.873+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.UnknownHostException: starrocks-be-1
+ 2025-12-18 23:49:44.865+09:00 WARN (heartbeat-mgr-pool-1|130) [HeartbeatMgr$BackendHeartbeatHandler.call():334] backend heartbeat got exception, addr: starrocks-be-0:9050
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-0
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:286)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:257)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-18 23:49:44.867+09:00 WARN (heartbeat-mgr-pool-7|154) [HeartbeatMgr$BackendHeartbeatHandler.call():334] backend heartbeat got exception, addr: starrocks-be-1:9050
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-1
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:286)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:257)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-18 23:49:44.866+09:00 WARN (heartbeat-mgr-pool-0|129) [HeartbeatMgr$BackendHeartbeatHandler.call():334] backend heartbeat got exception, addr: starrocks-be-2:9050
+ org.apache.thrift.TException: java.net.UnknownHostException: starrocks-be-2
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.call(ThriftRPCRequestExecutor.java:60)
+	at com.starrocks.rpc.ThriftRPCRequestExecutor.callNoRetry(ThriftRPCRequestExecutor.java:40)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:286)
+	at com.starrocks.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:257)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-18 23:49:44.870+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.UnknownHostException: starrocks-be-2
+ 2025-12-18 23:49:44.871+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.UnknownHostException: starrocks-be-0
+ 2025-12-18 23:49:44.871+09:00 WARN (heartbeat mgr|17) [HeartbeatMgr.runAfterCatalogReady():169] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.UnknownHostException: starrocks-be-1
+ 2025-12-18 23:51:35.634+09:00 WARN (thrift-server-pool-16|221) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 4
+ 2025-12-18 23:51:35.635+09:00 WARN (thrift-server-pool-5|210) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 5
+ 2025-12-18 23:51:35.634+09:00 WARN (thrift-server-pool-18|224) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 4
+ 2025-12-18 23:51:35.634+09:00 WARN (thrift-server-pool-10|215) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 4
+ 2025-12-18 23:51:35.634+09:00 WARN (thrift-server-pool-14|219) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 5
+ 2025-12-18 23:51:35.638+09:00 WARN (thrift-server-pool-20|226) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 5
+ 2025-12-18 23:51:35.732+09:00 WARN (thrift-server-pool-16|221) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 6
+ 2025-12-18 23:51:35.732+09:00 WARN (thrift-server-pool-29|251) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 6
+ 2025-12-18 23:51:35.734+09:00 WARN (thrift-server-pool-8|213) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 6
+ 2025-12-18 23:51:35.833+09:00 WARN (thrift-server-pool-14|219) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 7
+ 2025-12-18 23:51:35.834+09:00 WARN (thrift-server-pool-19|225) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 7
+ 2025-12-18 23:52:35.822+09:00 WARN (thrift-server-pool-14|219) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 11
+ 2025-12-18 23:52:35.822+09:00 WARN (thrift-server-pool-13|218) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 12
+ 2025-12-18 23:52:35.822+09:00 WARN (thrift-server-pool-16|221) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 10
+ 2025-12-18 23:52:35.822+09:00 WARN (thrift-server-pool-11|216) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 13
+ 2025-12-18 23:52:35.823+09:00 WARN (thrift-server-pool-6|211) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 11
+ 2025-12-18 23:52:35.823+09:00 WARN (thrift-server-pool-17|223) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 13
+ 2025-12-18 23:52:35.823+09:00 WARN (thrift-server-pool-19|225) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 11
+ 2025-12-18 23:52:35.823+09:00 WARN (thrift-server-pool-10|215) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 12
+ 2025-12-18 23:52:35.823+09:00 WARN (thrift-server-pool-20|226) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 10
+ 2025-12-18 23:52:35.823+09:00 WARN (thrift-server-pool-5|210) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 10
+ 2025-12-18 23:52:35.823+09:00 WARN (thrift-server-pool-29|251) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 12
+ 2025-12-18 23:52:35.823+09:00 WARN (thrift-server-pool-8|213) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 13
+ 2025-12-18 23:52:35.924+09:00 WARN (thrift-server-pool-18|224) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 14
+ 2025-12-18 23:52:35.924+09:00 WARN (thrift-server-pool-14|219) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 14
+ 2025-12-18 23:52:35.924+09:00 WARN (thrift-server-pool-10|215) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 14
+ 2025-12-18 23:53:35.948+09:00 WARN (thrift-server-pool-13|218) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 17
+ 2025-12-18 23:53:35.948+09:00 WARN (thrift-server-pool-20|226) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 20
+ 2025-12-18 23:53:35.948+09:00 WARN (thrift-server-pool-16|221) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 19
+ 2025-12-18 23:53:35.948+09:00 WARN (thrift-server-pool-14|219) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 20
+ 2025-12-18 23:53:35.948+09:00 WARN (thrift-server-pool-11|216) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 18
+ 2025-12-18 23:53:35.949+09:00 WARN (thrift-server-pool-8|213) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 18
+ 2025-12-18 23:53:35.949+09:00 WARN (thrift-server-pool-5|210) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 20
+ 2025-12-18 23:53:35.948+09:00 WARN (thrift-server-pool-19|225) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 17
+ 2025-12-18 23:53:35.948+09:00 WARN (thrift-server-pool-18|224) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 18
+ 2025-12-18 23:53:35.949+09:00 WARN (thrift-server-pool-6|211) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 19
+ 2025-12-18 23:53:35.948+09:00 WARN (thrift-server-pool-17|223) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 19
+ 2025-12-18 23:53:35.949+09:00 WARN (thrift-server-pool-10|215) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 17
+ 2025-12-18 23:53:36.049+09:00 WARN (thrift-server-pool-13|218) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 21
+ 2025-12-18 23:53:36.049+09:00 WARN (thrift-server-pool-29|251) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 21
+ 2025-12-18 23:53:36.050+09:00 WARN (thrift-server-pool-8|213) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 21
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-13|218) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 25
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-10|215) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 28
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-6|211) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 27
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-11|216) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 28
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-16|221) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 26
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-5|210) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 25
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-18|224) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 25
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-43|269) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 28
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-8|213) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 26
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-17|223) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 26
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-29|251) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 27
+ 2025-12-18 23:54:36.083+09:00 WARN (thrift-server-pool-14|219) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 27
+ 2025-12-18 23:55:36.184+09:00 WARN (thrift-server-pool-19|225) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 34
+ 2025-12-18 23:55:36.184+09:00 WARN (thrift-server-pool-17|223) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 30
+ 2025-12-18 23:55:36.184+09:00 WARN (thrift-server-pool-18|224) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 32
+ 2025-12-18 23:55:36.184+09:00 WARN (thrift-server-pool-29|251) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 33
+ 2025-12-18 23:55:36.184+09:00 WARN (thrift-server-pool-43|269) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 35
+ 2025-12-18 23:55:36.186+09:00 WARN (thrift-server-pool-14|219) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 30
+ 2025-12-18 23:55:36.186+09:00 WARN (thrift-server-pool-11|216) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 33
+ 2025-12-18 23:55:36.186+09:00 WARN (thrift-server-pool-8|213) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 32
+ 2025-12-18 23:55:36.186+09:00 WARN (thrift-server-pool-6|211) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 33
+ 2025-12-18 23:55:36.186+09:00 WARN (thrift-server-pool-16|221) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 34
+ 2025-12-18 23:55:36.186+09:00 WARN (thrift-server-pool-13|218) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 32
+ 2025-12-18 23:55:36.186+09:00 WARN (thrift-server-pool-10|215) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 34
+ 2025-12-18 23:55:36.186+09:00 WARN (thrift-server-pool-5|210) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 30
+ 2025-12-18 23:55:36.187+09:00 WARN (thrift-server-pool-60|286) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 35
+ 2025-12-18 23:55:36.187+09:00 WARN (thrift-server-pool-61|287) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 35
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-17|223) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 39
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-11|216) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 41
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-29|251) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 42
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-60|286) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 41
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-14|219) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 40
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-43|269) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 41
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-6|211) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 40
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-18|224) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 40
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-5|210) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 39
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-61|287) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 39
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-8|213) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 42
+ 2025-12-18 23:56:36.295+09:00 WARN (thrift-server-pool-16|221) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 42
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-10|215) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 47
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-29|251) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 45
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-16|221) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 46
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-11|216) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 47
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-61|287) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 49
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-5|210) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 45
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-60|286) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 48
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-8|213) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 46
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-6|211) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10003, signature: 49
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-14|219) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 48
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-13|218) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10001, signature: 45
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-17|223) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 48
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-19|225) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 46
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-18|224) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 49
+ 2025-12-18 23:59:36.133+09:00 WARN (thrift-server-pool-43|269) [LeaderImpl.finishTask():237] cannot find task. type: PUBLISH_VERSION, backendId: 10002, signature: 47
+ 
