@@ -44,7 +44,7 @@ graph LR
 
 | Component | Version | Description |
 | :--- | :--- | :--- |
-| **StarRocks** | 3.x | FE(3) + BE(3) MPP Architecture |
+| **StarRocks** | 4.x | FE(3) + BE(3) MPP Architecture |
 | **Apache Kafka** | 7.6.1 | KRaft Mode (No Zookeeper), 3 Brokers |
 | **Debezium** | 2.4 | Kafka Connect 기반 CDC (JSON Converter) |
 | **MariaDB** | 10.6 | Source OLTP Database |
