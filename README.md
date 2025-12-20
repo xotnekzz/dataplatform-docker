@@ -4,6 +4,9 @@
 ![Kafka](https://img.shields.io/badge/Kafka-KRaft_Mode-black)
 ![Debezium](https://img.shields.io/badge/Debezium-2.4-green)
 
+맥북 환경에서 데이터 엔지니어링 학습 및 연구를 해보려고 만든 프로젝트 입니다.
+
+
 ## 🏗️ 디렉토리 구조 (Directory Structure)
 
 본 프로젝트는 각 컴포넌트별로 독립된 환경을 제공하여 유지보수와 개별 테스트가 용이하도록 구성되어 있습니다.
